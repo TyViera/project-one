@@ -11,8 +11,8 @@ public class Main {
                 var statementInsert = conn.createStatement();
                 var statementSelect = conn.createStatement();
         ){
-            var result = statementCreate.execute("CREATE TABLE clients (nif VARCHAR(10), name VARCHAR(250), address VARCHAR(255))");
-            System.out.println("Result of table creation: " + result);
+            var resultTableClients = statementCreate.execute("CREATE TABLE clients (nif VARCHAR(10), name VARCHAR(250), address VARCHAR(255))");
+            System.out.println("Result of table creation: " + resultTableClients);
 
             var insertResult = statementInsert.executeUpdate("INSERT INTO clients (nif, name, address) VALUES ('X1234Y','Filip','Mars')");
             System.out.println("Result of insertion: " + insertResult);

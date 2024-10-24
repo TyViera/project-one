@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "clients")
 public class Client {
@@ -25,4 +27,16 @@ public class Client {
     public String getAddress() { return address; }
 
     public void setAddress(String address) { this.address = address; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client client)) return false;
+        return Objects.equals(nif, client.nif);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nif);
+    }
 }
