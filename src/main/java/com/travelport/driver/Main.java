@@ -35,7 +35,7 @@ public class Main {
                     "(2, '987654321', 102, 7), " +
                     "(3, '456789123', 103, 1), " +
                     "(4, '123456789', 102, 2);");
-            System.out.println("Result of insertion: " + insertResultProducts);
+            System.out.println("Result of insertion: " + insertResultPurchases);
 
 //            var selectResult = statementSelect.executeQuery("SELECT nif, name, address FROM clients");
 //            while(selectResult.next()){
