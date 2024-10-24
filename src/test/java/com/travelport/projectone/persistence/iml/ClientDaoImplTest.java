@@ -73,7 +73,7 @@ class ClientDaoImplTest {
                 Arguments.of("", false),
                 Arguments.of("argument", false),
                 Arguments.of("ana", false),
-                Arguments.of("Ana", true)
+                Arguments.of("Ana García", true)
         );
     }
 }
