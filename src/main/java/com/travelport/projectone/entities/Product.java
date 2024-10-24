@@ -1,19 +1,19 @@
 package com.travelport.projectone.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
     private Integer id;
 
+    @Column(name = "product_name")
     private String name;
 
+    @Column(name = "product_code")
     private String code;
 
     public Integer getId() {

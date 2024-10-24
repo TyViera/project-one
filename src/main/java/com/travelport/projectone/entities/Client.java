@@ -1,9 +1,6 @@
 package com.travelport.projectone.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 
@@ -11,12 +8,16 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "client_id")
     private Integer id;
 
+    @Column(name = "client_name")
     private String name;
 
+    @Column(name = "client_nif")
     private String NIF;
 
+    @Column(name = "client_address")
     private String address;
 
     public Integer getId() {
