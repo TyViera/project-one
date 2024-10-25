@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.reflect.ParameterizedType;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Component
@@ -29,7 +27,6 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
     public void save(Product product) {entityManager.persist(product);}
 
     @Override

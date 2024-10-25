@@ -37,6 +37,10 @@ public class Main {
                     "(4, '123456789', 102, 2);");
             System.out.println("Result of insertion: " + insertResultPurchases);
 
+            while(true == true){
+
+            }
+
 //            var selectResult = statementSelect.executeQuery("SELECT nif, name, address FROM clients");
 //            while(selectResult.next()){
 //               var nif = selectResult.getString("nif");
