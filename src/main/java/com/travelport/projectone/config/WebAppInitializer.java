@@ -17,7 +17,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
         var servlet =
                 servletContext.addServlet(
-                        "spring", new DispatcherServlet(new GenericWebApplicationContext()));
+                        "spring", new DispatcherServlet(appContext));
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
     }

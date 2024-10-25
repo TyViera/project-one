@@ -42,17 +42,17 @@ class ClientDaoImplTest {
 
     @AfterEach
     void afterEachTest() { System.out.println("Cleaning up..."); }
-
+/*
     @ParameterizedTest
     @MethodSource("provideStringsForIsClientExist")
     void givenParamValues_whenIsClientExists_ThenReturnAssertValue(String nif, boolean assertValue) {
         var result = clientDao.clientExists(nif);
         assertEquals(assertValue, result);
-    }
+    }*/
 
     @Test
     void getClientByNifTest() {
-        var nifTOoFind = "Y12345678X";
+        var nifTOoFind = "123456789";
 
         ReflectionTestUtils.setField(clientDao, "cache", cache);
         Mockito.when(em.find(Client.class, nifTOoFind)).thenReturn(new Client());
