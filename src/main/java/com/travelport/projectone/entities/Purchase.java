@@ -23,7 +23,7 @@ public class Purchase {
     @JoinColumn(name = "product_code")
     private Product product;
 
-    public int getId() { return id; }
+    public Integer getId() { return id; }
 
     public void setId(int id) { this.id = id; }
 

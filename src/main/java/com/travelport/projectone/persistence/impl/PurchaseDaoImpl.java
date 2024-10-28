@@ -5,6 +5,7 @@ import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.PurchaseDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +17,7 @@ import java.util.Optional;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
+@Component
 public class PurchaseDaoImpl implements PurchaseDao {
 
     @PersistenceContext
