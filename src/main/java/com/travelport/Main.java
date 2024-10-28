@@ -1,4 +1,4 @@
-package com.travelport.driver;
+package com.travelport;
 
 import java.sql.SQLException;
 import java.util.Scanner;

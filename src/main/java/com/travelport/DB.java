@@ -1,4 +1,4 @@
-package com.travelport.driver;
+package com.travelport;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
