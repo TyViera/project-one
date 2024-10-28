@@ -10,6 +10,8 @@ public interface SalesDao {
 
     List<Sales> list();
 
+    Optional<Sales> getSalesById(Integer id);
+
     void update(Sales sales);
 
     Optional<Integer> deleteById(Integer id);
