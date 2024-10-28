@@ -12,7 +12,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+//@Component
 @Transactional(isolation = Isolation.READ_COMMITTED)
 public class ProductDaoImpl implements ProductDao {
 
