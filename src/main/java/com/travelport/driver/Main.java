@@ -1,10 +1,12 @@
 package com.travelport.driver;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
         var db = new DB();
+        Scanner in = new Scanner(System.in);
         try(
                 var conn = db.connect();
                 var statementCreate = conn.createStatement();
@@ -36,10 +38,6 @@ public class Main {
                     "(3, '456789123', 103, 1), " +
                     "(4, '123456789', 102, 2);");
             System.out.println("Result of insertion: " + insertResultPurchases);
-
-            while(true == true){
-
-            }
 
 //            var selectResult = statementSelect.executeQuery("SELECT nif, name, address FROM clients");
 //            while(selectResult.next()){

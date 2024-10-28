@@ -50,13 +50,17 @@ public class PurchaseDaoImpl implements PurchaseDao {
     }
 
     @Override
-    public void update(Purchase purchase) {
-
-    }
+    @Transactional(isolation = Isolation.READ_COMMITTED)
+    public void update(Purchase purchase) { em.merge(purchase); }
 
     @Override
     public Optional<Integer> deleteById(Integer code) {
-        return Optional.empty();
+        return getPurchaseById(code)
+                .map(
+                        purchase -> {
+                            em.remove(purchase);
+                            return code;
+                        });
     }
 
 

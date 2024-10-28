@@ -1,6 +1,7 @@
 package com.travelport.projectone.persistence.impl;
 
 import com.travelport.projectone.entities.Product;
+import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.ProductDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -9,37 +10,36 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Component
-@Transactional(isolation = Isolation.READ_COMMITTED)
 public class ProductDaoImpl implements ProductDao {
 
     @PersistenceContext
     private EntityManager entityManager;
-    private final Class<Product> productClass;
 
-    @SuppressWarnings("unchecked")
-    protected ProductDaoImpl() {
-        this.productClass = (Class<Product>) ((ParameterizedType) getClass()
-                .getGenericSuperclass()).getActualTypeArguments()[0];
-    }
+    private final Map<Integer, Product> cache;
 
-    @Override
-    public void save(Product product) {entityManager.persist(product);}
-
-    @Override
-    public List<Product> list() {
-        var criteriaBuilder = entityManager.getCriteriaBuilder();
-        var query = criteriaBuilder.createQuery(productClass);
-        return entityManager.createQuery(query).getResultList();
-    }
+    public ProductDaoImpl() { cache = new HashMap<>(); }
 
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED)
+    public void save(Product product) {entityManager.persist(product);}
+
+    @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
+    public List<Product> list() {
+        var query = entityManager.createQuery("from Product ", Product.class);
+        return query.getResultList();
+    }
+
+    @Override
     public Optional<Product> getProductById(Integer code) {
-        return Optional.ofNullable(entityManager.find(Product.class, code));
+        var foundPurchase = cache.computeIfAbsent(code, x -> entityManager.find(Product.class, x));
+        return Optional.ofNullable(foundPurchase);
     }
 
     @Override
@@ -48,11 +48,11 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public Optional<Integer> deleteById(Integer code) {
-        Product product = entityManager.find(Product.class, code);
-        if (product != null) {
-            entityManager.remove(product);
-            return Optional.of(code);
-        }
-        return Optional.empty();
+        return getProductById(code)
+                .map(
+                        product -> {
+                            entityManager.remove(product);
+                            return code;
+                        });
     }
 }
