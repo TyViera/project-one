@@ -53,8 +53,8 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED)
-    public Optional<String> deleteByNif(String nif) {
-        return getClientByNif(nif)
+    public void deleteByNif(String nif) {
+        getClientByNif(nif)
                 .map(
                         client -> {
                             em.remove(client);

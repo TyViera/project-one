@@ -6,6 +6,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import com.travelport.projectone.entities.Product;
+import com.travelport.projectone.persistence.ProductDao;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImp implements ProductService {

@@ -15,5 +15,5 @@ public interface ClientDao {
 
     void update(Client client);
 
-    Optional<String> deleteByNif(String nif);
+    void deleteByNif(String nif);
 }
