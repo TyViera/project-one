@@ -54,12 +54,12 @@ public class PurchaseDaoImpl implements PurchaseDao {
     public void update(Purchase purchase) { em.merge(purchase); }
 
     @Override
-    public Optional<Integer> deleteById(Integer code) {
-        return getPurchaseById(code)
+    public Optional<Integer> deleteById(Integer id) {
+        return getPurchaseById(id)
                 .map(
                         purchase -> {
                             em.remove(purchase);
-                            return code;
+                            return id;
                         });
     }
 
