@@ -1,6 +1,7 @@
 package com.travelport.projectone.persistence.iml;
 
 import com.travelport.projectone.entities.Client;
+import com.travelport.projectone.persistence.impl.ClientDaoImpl;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -42,13 +43,13 @@ class ClientDaoImplTest {
 
     @AfterEach
     void afterEachTest() { System.out.println("Cleaning up..."); }
-/*
+
     @ParameterizedTest
     @MethodSource("provideStringsForIsClientExist")
     void givenParamValues_whenIsClientExists_ThenReturnAssertValue(String nif, boolean assertValue) {
         var result = clientDao.clientExists(nif);
         assertEquals(assertValue, result);
-    }*/
+    }
 
     @Test
     void getClientByNifTest() {

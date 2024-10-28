@@ -1,4 +1,4 @@
-package com.travelport.projectone.persistence.iml;
+package com.travelport.projectone.persistence.impl;
 
 import com.travelport.projectone.entities.Product;
 import com.travelport.projectone.persistence.ProductDao;

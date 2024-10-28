@@ -21,7 +21,7 @@ public class WebAppConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver viewResolver() {
         var resolver = new org.springframework.web.servlet.view.InternalResourceViewResolver();
-        resolver.setPrefix("/html/");
+        resolver.setPrefix("/");
         resolver.setSuffix(".html");
         return resolver;
     }
