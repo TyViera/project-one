@@ -15,3 +15,4 @@ Notes:
 - Stock for products is infinite
 - The project can be done individually or in pairs.
 - Dealine: November 5th.
+
