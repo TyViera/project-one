@@ -1,7 +1,6 @@
-package com.travelport.projectone.persistence.iml;
+package com.travelport.projectone.persistence.impl;
 
 import com.travelport.projectone.entities.Client;
-import com.travelport.projectone.persistence.impl.ClientDaoImpl;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;

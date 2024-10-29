@@ -1,5 +1,6 @@
 package com.travelport;
 
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -7,17 +8,18 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         var db = new DB();
         Scanner in = new Scanner(System.in);
-        try(
-                var conn = db.connect();
+        try (
+                var conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/project_one", "postgres", "");
                 var statementCreate = conn.createStatement();
                 var statementInsert = conn.createStatement();
                 var statementSelect = conn.createStatement();
-        ){
-            var resultTableClients = statementCreate.execute("CREATE TABLE clients (nif VARCHAR(10), name VARCHAR(250), address VARCHAR(255))");
+        ) {
+            conn.setAutoCommit(true);
+            var resultTableClients = statementCreate.execute("CREATE TABLE IF NOT EXISTS clients (nif VARCHAR(10), name VARCHAR(250), address VARCHAR(255))");
             System.out.println("Result of table creation: " + resultTableClients);
-            var resultTableProducts = statementCreate.execute("CREATE TABLE products (code INT, name VARCHAR(250))");
+            var resultTableProducts = statementCreate.execute("CREATE TABLE IF NOT EXISTS products (code INT, name VARCHAR(250))");
             System.out.println("Result of table creation: " + resultTableProducts);
-            var resultTablePurchases = statementCreate.execute("CREATE TABLE purchases (id INT, client_nif VARCHAR(10), product_code INT, quantity INT)");
+            var resultTablePurchases = statementCreate.execute("CREATE TABLE IF NOT EXISTS purchases (id INT, client_nif VARCHAR(10), product_code INT, quantity INT)");
             System.out.println("Result of table creation: " + resultTablePurchases);
 
             var insertResultClients = statementInsert.executeUpdate("INSERT INTO clients (nif, name, address) VALUES" +
@@ -39,15 +41,15 @@ public class Main {
                     "(4, '123456789', 102, 2);");
             System.out.println("Result of insertion: " + insertResultPurchases);
 
-//            var selectResult = statementSelect.executeQuery("SELECT nif, name, address FROM clients");
-//            while(selectResult.next()){
-//               var nif = selectResult.getString("nif");
-//               var name = selectResult.getString("name");
-//               var address = selectResult.getString("address");
-//               System.out.println("I've found:" + nif + ", " + name + ", " + address);
-//            }
-//            System.out.println("Result of table select: " + selectResult);
+            var selectResult = statementSelect.executeQuery("SELECT nif, name, address FROM clients");
+            while(selectResult.next()){
+               var nif = selectResult.getString("nif");
+               var name = selectResult.getString("name");
+               var address = selectResult.getString("address");
+               System.out.println("I've found:" + nif + ", " + name + ", " + address);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
     }
 }

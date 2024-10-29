@@ -7,6 +7,6 @@ import java.sql.SQLException;
 public class DB {
 
     public Connection connect() throws SQLException {
-        return DriverManager.getConnection("jdbc:h2:mem:dbF");
+        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/project_one");
     }
 }
