@@ -16,3 +16,17 @@ Notes:
 - The project can be done individually or in pairs.
 - Dealine: November 5th.
 
+{
+    "nif": "49831796L",
+    "sales" : [
+        {
+            "saleId" : 1,
+            "products" : [
+                {
+                    "code": 3,
+                    "quantity": 30
+                }
+            ]       
+        }
+    ]
+}

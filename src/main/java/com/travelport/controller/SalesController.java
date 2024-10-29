@@ -48,11 +48,21 @@ public class SalesController {
 
         // Guardamos la venta
         salesDao.save(sale); // el save lleva el flush, forzamos el Entity Manager a persistir los datos y que se genere el sale_id
-        System.out.println("Sale ID: " + sale.getId()); // comprobamos que el id se ha generado
 
         // Creamos los sale details para la Sale
         List<SaleDetail> saleDetails = new ArrayList<>();
         for (SaleDetailDTO detailDTO : saleDTO.getProducts()) {
+            // Validaciones previas
+            if (detailDTO.getQuantity() == null) {
+                return ResponseEntity.notFound().build();
+            }
+            if (detailDTO.getQuantity() <= 0) {
+                return ResponseEntity.notFound().build();
+            }
+            if (detailDTO.getQuantity() % 1 != 0) {
+                return ResponseEntity.notFound().build();
+            }
+
             // Obtenemos el producto
             Optional<Product> productOpt = productDao.findById((detailDTO.getProductCode()));
             if (productOpt.isEmpty()) {
@@ -70,7 +80,7 @@ public class SalesController {
             saleDetail.setId(saleDetailId);
             saleDetail.setSale(sale);
             saleDetail.setProduct(productOpt.get());
-            saleDetail.setQuantity(detailDTO.getQuantity());
+            saleDetail.setQuantity(detailDTO.getQuantity().intValue());
             saleDetails.add(saleDetail);
         }
 
