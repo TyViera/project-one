@@ -4,8 +4,11 @@ import com.travelport.entities.Sale;
 import com.travelport.jpa.SalesDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Transactional
 @Component
@@ -23,5 +26,14 @@ public class SalesDaoImpl implements SalesDao {
     @Override
     public void update(Sale sale) {
         em.merge(sale);
+    }
+
+    @Override
+    public List<Sale> findByClientNif(String nif) {
+        TypedQuery<Sale> query = em.createQuery(
+                "SELECT s FROM Sale s WHERE s.client.nif = :nif", Sale.class
+        );
+        query.setParameter("nif", nif);
+        return query.getResultList();
     }
 }

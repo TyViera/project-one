@@ -1,16 +1,15 @@
 package com.travelport.controller;
 
+import com.travelport.dto.ClientSalesDTO;
 import com.travelport.entities.*;
 import com.travelport.jpa.ClientDao;
 import com.travelport.jpa.ProductDao;
 import com.travelport.jpa.SalesDao;
-import com.travelport.models.SaleDTO;
-import com.travelport.models.SaleDetailDTO;
+import com.travelport.dto.SaleDTO;
+import com.travelport.dto.SaleDetailDTO;
+import com.travelport.service.SalesService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -24,11 +23,13 @@ public class SalesController {
     private final SalesDao salesDao;
     private final ClientDao clientDao;
     private final ProductDao productDao;
+    private final SalesService salesService;
 
-    public SalesController(SalesDao salesDao, ClientDao clientDao, ProductDao productDao) {
+    public SalesController(SalesDao salesDao, ClientDao clientDao, ProductDao productDao, SalesService salesService) {
         this.salesDao = salesDao;
         this.clientDao = clientDao;
         this.productDao = productDao;
+        this.salesService = salesService;
     }
 
     @PostMapping
@@ -90,5 +91,14 @@ public class SalesController {
         salesDao.update(sale);
 
         return ResponseEntity.ok(sale);
+    }
+
+    @GetMapping("/{nif}")
+    public ResponseEntity<ClientSalesDTO> getSalesByClient(@PathVariable("nif") String nif) {
+        ClientSalesDTO clientSalesDTO = salesService.getClientSalesDTO(nif);
+        if (clientSalesDTO.getSales().isEmpty() ) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(clientSalesDTO);
     }
 }

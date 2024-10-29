@@ -1,4 +1,4 @@
-package com.travelport.models;
+package com.travelport.dto;
 
 import java.util.List;
 
