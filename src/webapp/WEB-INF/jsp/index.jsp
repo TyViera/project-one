@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Small Store</title>
+    <title>Small Store - Home</title>
 </head>
 <body>
 
