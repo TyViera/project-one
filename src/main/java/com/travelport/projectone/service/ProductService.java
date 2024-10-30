@@ -16,4 +16,6 @@ public interface ProductService {
     Product save(Product product);
 
     Product update(Integer code, Product product);
+
+    List<Product> incomeReport();
 }

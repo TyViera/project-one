@@ -55,4 +55,15 @@ public class ProductDaoImpl implements ProductDao {
                             return code;
                         });
     }
+
+    @Override
+    public List<Product> incomeReport() {
+        var query = entityManager.createQuery(
+                "SELECT p FROM Product p " +
+                        "JOIN Purchase s ON s.product = p " +
+                        "GROUP BY p " +
+                        "ORDER BY COUNT(s) DESC", Product.class);
+        query.setMaxResults(10);
+        return query.getResultList();
+    }
 }

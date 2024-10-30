@@ -14,4 +14,6 @@ public interface ProductDao {
     void update(Product product);
 
     Optional<Integer> deleteById(Integer code);
+
+    List<Product> incomeReport();
 }

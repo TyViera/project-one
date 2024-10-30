@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 
-//@Configuration
-//@EnableJpaRepositories(basePackages = "com.travelport.projectone.jpa")
+@Configuration
+@EnableJpaRepositories(basePackages = "com.travelport.projectone.jpa")
 public class JpaRepositoryConfig {
 
     @Bean
