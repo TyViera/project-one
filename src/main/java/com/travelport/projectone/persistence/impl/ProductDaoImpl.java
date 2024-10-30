@@ -34,6 +34,10 @@ public class ProductDaoImpl implements ProductDao {
         return query.getResultList();
     }
 
+    public boolean productExists(Integer code) {
+        return (code != null && em.find(Product.class, code) != null);
+    }
+
     @Override
     public Optional<Product> getProductByCode(Integer code) {
         var foundPurchase = cache.computeIfAbsent(code, x -> em.find(Product.class, x));

@@ -33,7 +33,7 @@ class ProductDaoImplTest {
     EntityManager em;
 
     @Spy
-    HashMap<String, Product> cache;
+    HashMap<Integer, Product> cache;
 
     @BeforeAll
     static void beforeAll() { System.out.println("Before All..."); }
