@@ -1,6 +1,7 @@
 package com.travelport.projectone.controller;
 
 import com.travelport.projectone.entities.Client;
+import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.service.ClientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +42,9 @@ public class ClientController {
         return ResponseEntity.noContent().build();
     }
 
-
+    @GetMapping("/{nif}")
+    public ResponseEntity<List<Purchase>> seePastSales(@PathVariable("nif") String nif) {
+        clientService.seePastSales(nif);
+        return ResponseEntity.noContent().build();
+    }
 }
