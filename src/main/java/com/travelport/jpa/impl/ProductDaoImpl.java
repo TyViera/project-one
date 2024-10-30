@@ -2,9 +2,9 @@ package com.travelport.jpa.impl;
 
 import com.travelport.entities.Product;
 import com.travelport.jpa.ProductDao;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class ProductDaoImpl extends AbstractEntityDaoImpl<Product, Integer> implements ProductDao {
 
 }
