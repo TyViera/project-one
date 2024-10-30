@@ -18,7 +18,10 @@ public class ClientService {
         this.clientDao = clientDao;
     }
 
-    public void SaveClient(Client client) {
+    public void saveClient(Client client) {
+        if (client == null) {
+            throw new IllegalArgumentException("Client cannot be null");
+        }
         clientDao.save(client);
     }
 
@@ -31,7 +34,10 @@ public class ClientService {
     }
 
     public void updateClient(Client client) {
-        clientDao.update(client);
+        if (client == null) {
+            throw new IllegalArgumentException("Client cannot be null");
+        }
+        clientDao.save(client);
     }
 
     public void deleteClientByNif(String nif) {

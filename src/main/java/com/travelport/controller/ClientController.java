@@ -33,7 +33,7 @@ public class ClientController {
 
     @PostMapping
     public Client postClient(@RequestBody Client client) {
-        clientService.SaveClient(client);
+        clientService.saveClient(client);
         return client;
     }
 
