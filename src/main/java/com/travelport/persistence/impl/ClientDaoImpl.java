@@ -1,7 +1,7 @@
-package com.travelport.jpa.impl;
+package com.travelport.persistence.impl;
 
 import com.travelport.entities.Client;
-import com.travelport.jpa.ClientDao;
+import com.travelport.persistence.ClientDao;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

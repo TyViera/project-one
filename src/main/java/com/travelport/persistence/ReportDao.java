@@ -1,4 +1,4 @@
-package com.travelport.jpa;
+package com.travelport.persistence;
 
 import com.travelport.dto.ProductReportOutputDTO;
 

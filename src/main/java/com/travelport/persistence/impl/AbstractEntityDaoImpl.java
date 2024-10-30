@@ -1,6 +1,6 @@
-package com.travelport.jpa.impl;
+package com.travelport.persistence.impl;
 
-import com.travelport.jpa.AbstractEntityDao;
+import com.travelport.persistence.AbstractEntityDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;

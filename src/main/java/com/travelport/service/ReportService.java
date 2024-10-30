@@ -1,7 +1,7 @@
 package com.travelport.service;
 
 import com.travelport.dto.ProductReportOutputDTO;
-import com.travelport.jpa.ReportDao;
+import com.travelport.persistence.ReportDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

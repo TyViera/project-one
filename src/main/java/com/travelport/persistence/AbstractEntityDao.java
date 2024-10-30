@@ -1,4 +1,4 @@
-package com.travelport.jpa;
+package com.travelport.persistence;
 
 import java.util.List;
 import java.util.Optional;

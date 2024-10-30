@@ -4,7 +4,7 @@ import com.travelport.dto.ClientSalesOutputDTO;
 import com.travelport.dto.SaleDetailOutputDTO;
 import com.travelport.dto.SaleOutputDTO;
 import com.travelport.entities.Sale;
-import com.travelport.jpa.SalesDao;
+import com.travelport.persistence.SalesDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

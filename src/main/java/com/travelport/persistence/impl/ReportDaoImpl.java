@@ -1,7 +1,7 @@
-package com.travelport.jpa.impl;
+package com.travelport.persistence.impl;
 
 import com.travelport.dto.ProductReportOutputDTO;
-import com.travelport.jpa.ReportDao;
+import com.travelport.persistence.ReportDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;

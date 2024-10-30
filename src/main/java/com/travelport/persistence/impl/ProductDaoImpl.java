@@ -1,7 +1,7 @@
-package com.travelport.jpa.impl;
+package com.travelport.persistence.impl;
 
 import com.travelport.entities.Product;
-import com.travelport.jpa.ProductDao;
+import com.travelport.persistence.ProductDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
