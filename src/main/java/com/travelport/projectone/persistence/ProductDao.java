@@ -9,11 +9,11 @@ public interface ProductDao {
 
     List<Product> list();
 
-    Optional<Product> getProductById(Integer code);
+    Optional<Product> getProductByCode(Integer code);
 
     void update(Product product);
 
-    Optional<Integer> deleteById(Integer code);
+    Optional<Integer> deleteByCode(Integer code);
 
     List<Product> incomeReport();
 }
