@@ -2,10 +2,10 @@ package com.travelport.dto;
 
 import java.util.List;
 
-public class SaleResponseDTO {
+public class SaleOutputDTO {
 
     private Integer saleId;
-    private List<SaleDetailResponseDTO> products;
+    private List<SaleDetailOutputDTO> products;
 
     public Integer getSaleId() {
         return saleId;
@@ -15,11 +15,11 @@ public class SaleResponseDTO {
         this.saleId = saleId;
     }
 
-    public List<SaleDetailResponseDTO> getProducts() {
+    public List<SaleDetailOutputDTO> getProducts() {
         return products;
     }
 
-    public void setProducts(List<SaleDetailResponseDTO> products) {
+    public void setProducts(List<SaleDetailOutputDTO> products) {
         this.products = products;
     }
 }

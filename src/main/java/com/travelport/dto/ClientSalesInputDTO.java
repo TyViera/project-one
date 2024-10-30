@@ -1,6 +1,6 @@
 package com.travelport.dto;
 
-public class SaleDetailDTO {
+public class ClientSalesInputDTO {
 
     private Integer productCode;
     private Double quantity;

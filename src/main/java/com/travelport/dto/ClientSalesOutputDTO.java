@@ -2,10 +2,10 @@ package com.travelport.dto;
 
 import java.util.List;
 
-public class ClientSalesDTO {
+public class ClientSalesOutputDTO {
 
     private String nif;
-    private List<SaleResponseDTO> sales;
+    private List<SaleOutputDTO> sales;
 
     public String getNif() {
         return nif;
@@ -15,11 +15,11 @@ public class ClientSalesDTO {
         this.nif = nif;
     }
 
-    public List<SaleResponseDTO> getSales() {
+    public List<SaleOutputDTO> getSales() {
         return sales;
     }
 
-    public void setSales(List<SaleResponseDTO> sales) {
+    public void setSales(List<SaleOutputDTO> sales) {
         this.sales = sales;
     }
 }

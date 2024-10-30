@@ -5,7 +5,7 @@ import java.util.List;
 public class SaleDTO {
 
     private String nif;
-    private List<SaleDetailDTO> products;
+    private List<ClientSalesInputDTO> products;
 
     public String getNif() {
         return nif;
@@ -15,11 +15,11 @@ public class SaleDTO {
         this.nif = nif;
     }
 
-    public List<SaleDetailDTO> getProducts() {
+    public List<ClientSalesInputDTO> getProducts() {
         return products;
     }
 
-    public void setProducts(List<SaleDetailDTO> products) {
+    public void setProducts(List<ClientSalesInputDTO> products) {
         this.products = products;
     }
 }

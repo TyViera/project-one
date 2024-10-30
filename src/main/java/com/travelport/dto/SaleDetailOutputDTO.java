@@ -1,6 +1,6 @@
 package com.travelport.dto;
 
-public class SaleDetailResponseDTO {
+public class SaleDetailOutputDTO {
 
     private Integer code;
     private Integer quantity;

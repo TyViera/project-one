@@ -1,12 +1,11 @@
 package com.travelport.controller;
 
-import com.travelport.dto.ClientSalesDTO;
+import com.travelport.dto.ClientSalesOutputDTO;
 import com.travelport.entities.*;
-import com.travelport.jpa.ClientDao;
-import com.travelport.jpa.ProductDao;
-import com.travelport.jpa.SalesDao;
 import com.travelport.dto.SaleDTO;
-import com.travelport.dto.SaleDetailDTO;
+import com.travelport.dto.ClientSalesInputDTO;
+import com.travelport.service.ClientService;
+import com.travelport.service.ProductService;
 import com.travelport.service.SalesService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,16 +19,14 @@ import java.util.Optional;
 @RequestMapping("/sales")
 public class SalesController {
 
-    private final SalesDao salesDao;
-    private final ClientDao clientDao;
-    private final ProductDao productDao;
+    private final ProductService productService;
     private final SalesService salesService;
+    private final ClientService clientService;
 
-    public SalesController(SalesDao salesDao, ClientDao clientDao, ProductDao productDao, SalesService salesService) {
-        this.salesDao = salesDao;
-        this.clientDao = clientDao;
-        this.productDao = productDao;
+    public SalesController(ProductService productService, SalesService salesService, ClientService clientService) {
         this.salesService = salesService;
+        this.productService = productService;
+        this.clientService = clientService;
     }
 
     @PostMapping
@@ -38,7 +35,7 @@ public class SalesController {
         var sale = new Sale();
 
         // Obtenemos el cliente
-        Optional<Client> clientOpt = clientDao.findById(saleDTO.getNif());
+        Optional<Client> clientOpt = clientService.findClientByNif(saleDTO.getNif());
         if (clientOpt.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
@@ -48,11 +45,11 @@ public class SalesController {
         sale.setSellDate(new Timestamp(System.currentTimeMillis()));
 
         // Guardamos la venta
-        salesDao.save(sale); // el save lleva el flush, forzamos el Entity Manager a persistir los datos y que se genere el sale_id
+        salesService.saveSale(sale); // el save lleva el flush, forzamos el Entity Manager a persistir los datos y que se genere el sale_id
 
         // Creamos los sale details para la Sale
         List<SaleDetail> saleDetails = new ArrayList<>();
-        for (SaleDetailDTO detailDTO : saleDTO.getProducts()) {
+        for (ClientSalesInputDTO detailDTO : saleDTO.getProducts()) {
             // Validaciones previas
             if (detailDTO.getQuantity() == null) {
                 return ResponseEntity.notFound().build();
@@ -65,7 +62,7 @@ public class SalesController {
             }
 
             // Obtenemos el producto
-            Optional<Product> productOpt = productDao.findById((detailDTO.getProductCode()));
+            Optional<Product> productOpt = productService.findProductById((detailDTO.getProductCode()));
             if (productOpt.isEmpty()) {
                 return ResponseEntity.notFound().build();
             }
@@ -88,17 +85,17 @@ public class SalesController {
         sale.setSaleDetails(saleDetails);
 
         // Actualizar para añadir los details
-        salesDao.update(sale);
+        salesService.updateSale(sale);
 
         return ResponseEntity.ok(sale);
     }
 
     @GetMapping("/{nif}")
-    public ResponseEntity<ClientSalesDTO> getSalesByClient(@PathVariable("nif") String nif) {
-        ClientSalesDTO clientSalesDTO = salesService.getClientSalesDTO(nif);
-        if (clientSalesDTO.getSales().isEmpty() ) {
+    public ResponseEntity<ClientSalesOutputDTO> getSalesByClient(@PathVariable("nif") String nif) {
+        ClientSalesOutputDTO clientSalesOutputDTO = salesService.getClientSalesDTO(nif);
+        if (clientSalesOutputDTO.getSales().isEmpty() ) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(clientSalesDTO);
+        return ResponseEntity.ok(clientSalesOutputDTO);
     }
 }

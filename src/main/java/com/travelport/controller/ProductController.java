@@ -1,8 +1,7 @@
 package com.travelport.controller;
 
-import com.travelport.entities.Client;
 import com.travelport.entities.Product;
-import com.travelport.jpa.ProductDao;
+import com.travelport.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,20 +11,20 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
-    private final ProductDao productDao;
+    private final ProductService productService;
 
-    public ProductController(ProductDao productDao) {
-        this.productDao = productDao;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     @GetMapping
     public List<Product> getProducts() {
-        return productDao.list();
+        return productService.findAll();
     }
 
     @GetMapping("{code}")
     public ResponseEntity<Product> getProductByCode(@PathVariable("code") Integer code) {
-        var product = productDao.findById(code);
+        var product = productService.findProductById(code);
         if (product.isPresent()) {
             return ResponseEntity.ok(product.get());
         }
@@ -34,16 +33,16 @@ public class ProductController {
 
     @PostMapping
     public Product postProduct(@RequestBody Product product) {
-        productDao.save(product);
+        productService.saveProduct(product);
         return product;
     }
 
     @PatchMapping("/{code}")
     public ResponseEntity<Product> updateProduct(@PathVariable("code") Integer code, @RequestBody Product product) {
-        var findProduct = productDao.findById(code);
+        var findProduct = productService.findProductById(code);
         if (findProduct.isPresent()) {
             findProduct.get().setName(product.getName());
-            productDao.update(findProduct.get());
+            productService.updateProduct(findProduct.get());
             return ResponseEntity.ok(findProduct.get());
         }
         return ResponseEntity.notFound().build();
@@ -51,7 +50,7 @@ public class ProductController {
 
     @DeleteMapping("/{code}")
     public ResponseEntity<Void> deleteProduct(@PathVariable("code") Integer code) {
-        productDao.delete(code);
+        productService.deleteProduct(code);
         return ResponseEntity.noContent().build();
     }
 

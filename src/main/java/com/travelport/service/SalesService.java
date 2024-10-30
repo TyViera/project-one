@@ -1,8 +1,8 @@
 package com.travelport.service;
 
-import com.travelport.dto.ClientSalesDTO;
-import com.travelport.dto.SaleDetailResponseDTO;
-import com.travelport.dto.SaleResponseDTO;
+import com.travelport.dto.ClientSalesOutputDTO;
+import com.travelport.dto.SaleDetailOutputDTO;
+import com.travelport.dto.SaleOutputDTO;
 import com.travelport.entities.Sale;
 import com.travelport.jpa.SalesDao;
 import org.springframework.stereotype.Service;
@@ -25,30 +25,38 @@ public class SalesService {
         return salesDao.findByClientNif(nif);
     }
 
-    public ClientSalesDTO getClientSalesDTO(String nif) {
+    public ClientSalesOutputDTO getClientSalesDTO(String nif) {
         List<Sale> sales = getSalesByClientNif(nif);
 
-        ClientSalesDTO clientSalesDTO = new ClientSalesDTO();
-        clientSalesDTO.setNif(nif);
+        ClientSalesOutputDTO clientSalesOutputDTO = new ClientSalesOutputDTO();
+        clientSalesOutputDTO.setNif(nif);
 
-        List<SaleResponseDTO> saleResponseDTOs = sales.stream().map(sale -> {
-            SaleResponseDTO saleDTO = new SaleResponseDTO();
-            saleDTO.setSaleId(sale.getId());
+        List<SaleOutputDTO> saleOutputDTOS = sales.stream().map(sale -> {
+            SaleOutputDTO saleOutputDTO = new SaleOutputDTO();
+            saleOutputDTO.setSaleId(sale.getId());
 
-            List<SaleDetailResponseDTO> productDTOs = sale.getSaleDetails().stream().map(saleDetail -> {
-                SaleDetailResponseDTO detailDTO = new SaleDetailResponseDTO();
+            List<SaleDetailOutputDTO> productDTOs = sale.getSaleDetails().stream().map(saleDetail -> {
+                SaleDetailOutputDTO detailDTO = new SaleDetailOutputDTO();
                 detailDTO.setCode(saleDetail.getProduct().getCode());
                 detailDTO.setQuantity(saleDetail.getQuantity());
                 return detailDTO;
             }).collect(Collectors.toList());
 
-            saleDTO.setProducts(productDTOs);
-            return saleDTO;
+            saleOutputDTO.setProducts(productDTOs);
+            return saleOutputDTO;
         }).collect(Collectors.toList());
 
-        clientSalesDTO.setSales(saleResponseDTOs);
+        clientSalesOutputDTO.setSales(saleOutputDTOS);
 
-        return clientSalesDTO;
+        return clientSalesOutputDTO;
+    }
+
+    public void saveSale(Sale sale) {
+        salesDao.save(sale);
+    }
+
+    public void updateSale(Sale sale) {
+        salesDao.update(sale);
     }
 
 }
