@@ -1,5 +1,6 @@
 package com.travelport.projectone.persistence.impl;
 
+import com.travelport.projectone.entities.Client;
 import com.travelport.projectone.entities.Product;
 import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.ProductDao;
@@ -36,8 +37,12 @@ public class ProductDaoImpl implements ProductDao {
         return query.getResultList();
     }
 
+    public boolean productExists(Integer code) {
+        return (code != null && entityManager.find(Client.class, code) != null);
+    }
+
     @Override
-    public Optional<Product> getProductById(Integer code) {
+    public Optional<Product> getProductByCode(Integer code) {
         var foundPurchase = cache.computeIfAbsent(code, x -> entityManager.find(Product.class, x));
         return Optional.ofNullable(foundPurchase);
     }
@@ -47,8 +52,8 @@ public class ProductDaoImpl implements ProductDao {
     public void update(Product product) { entityManager.merge(product); }
 
     @Override
-    public Optional<Integer> deleteById(Integer code) {
-        return getProductById(code)
+    public Optional<Integer> deleteByCode(Integer code) {
+        return getProductByCode(code)
                 .map(
                         product -> {
                             entityManager.remove(product);

@@ -25,12 +25,12 @@ public class ProductServiceImp implements ProductService {
 
     @Override
     public Optional<Product> findByCode(Integer code) {
-        return productDao.getProductById(code);
+        return productDao.getProductByCode(code);
     }
 
     @Override
     public void deleteByCode(Integer code) {
-        productDao.deleteById(code);
+        productDao.deleteByCode(code);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ProductServiceImp implements ProductService {
 
     @Override
     public Product update(Integer code, Product product) {
-        var fproduct = productDao.getProductById(code);
+        var fproduct = productDao.getProductByCode(code);
         if (fproduct.isEmpty()) {
             return null;
         }
