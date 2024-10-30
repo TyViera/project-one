@@ -65,7 +65,7 @@ class ProductDaoImplTest {
         assertTrue(result.isPresent());
         assertFalse(cache.isEmpty());
 
-        Mockito.verify(em).find(Client.class, codeToFind);
+        Mockito.verify(em).find(Product.class, codeToFind);
     }
 
     static Stream<Arguments> provideStringsForIsProductExist() {
