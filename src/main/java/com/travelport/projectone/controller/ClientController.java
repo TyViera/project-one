@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/client")
 public class ClientController {
 
     private final ClientService clientService;
@@ -16,20 +17,28 @@ public class ClientController {
 
     @PostMapping("/create")
     public Client postClient(@RequestBody Client client) {
+
         clientService.save(client);
         return client;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable("id") Integer id) {
         var client = clientService.getClientById(id);
         return client.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/update/{id}")
     public ResponseEntity<Client> updateById(@PathVariable("id") Integer id, @RequestBody Client client) {
         return ResponseEntity.ok(clientService.update(id, client));
     }
+
+    @PatchMapping("/delete/{id}")
+    public ResponseEntity<Client> deleteById(@PathVariable("id") Integer id) {
+        clientService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
 
 
 }
