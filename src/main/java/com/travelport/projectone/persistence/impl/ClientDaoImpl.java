@@ -1,6 +1,7 @@
 package com.travelport.projectone.persistence.impl;
 
 import com.travelport.projectone.entities.Client;
+import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.ClientDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -58,5 +59,14 @@ public class ClientDaoImpl implements ClientDao {
             em.remove(client);
             return nif;
         });
+    }
+
+    @Override
+    public List<Purchase> seePastSales(String clientNif) {
+        var query = em.createQuery(
+                "SELECT p FROM Purchase p WHERE p.client.id = :clientNif", Purchase.class);
+        query.setParameter("clientNif", clientNif);
+
+        return query.getResultList();
     }
 }

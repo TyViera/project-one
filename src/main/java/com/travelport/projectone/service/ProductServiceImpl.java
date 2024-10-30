@@ -6,19 +6,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import com.travelport.projectone.entities.Product;
-import com.travelport.projectone.persistence.ProductDao;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
-public class ProductServiceImp implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private final ProductDao productDao;
 
-    public ProductServiceImp(ProductDao productDao) { this.productDao = productDao; }
+    public ProductServiceImpl(ProductDao productDao) { this.productDao = productDao; }
 
     @Override
     public List<Product> getProduct() { return productDao.list(); }

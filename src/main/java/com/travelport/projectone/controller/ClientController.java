@@ -40,4 +40,6 @@ public class ClientController {
         clientService.deleteByNif(nif);
         return ResponseEntity.noContent().build();
     }
+
+
 }

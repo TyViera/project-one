@@ -1,6 +1,8 @@
 package com.travelport.projectone.service;
 
 import com.travelport.projectone.entities.Client;
+import com.travelport.projectone.entities.Product;
+import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.ClientDao;
 import org.springframework.stereotype.Service;
 
@@ -8,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ClientServiceImp implements ClientService {
+public class ClientServiceImpl implements ClientService {
 
     private final ClientDao clientDao;
 
-    public ClientServiceImp(ClientDao clientDao) {
+    public ClientServiceImpl(ClientDao clientDao) {
         this.clientDao = clientDao;
     }
 
@@ -48,5 +50,10 @@ public class ClientServiceImp implements ClientService {
         }
         clientDao.save(client);
         return client;
+    }
+
+    @Override
+    public List<Purchase> seePastSales(String clientNif) {
+        return clientDao.seePastSales(clientNif);
     }
 }
