@@ -52,4 +52,8 @@ public class ProductServiceImp implements ProductService {
         return product;
     }
 
+    @Override
+    public List<Product> incomeReport() {
+        return productDao.incomeReport();
+    }
 }

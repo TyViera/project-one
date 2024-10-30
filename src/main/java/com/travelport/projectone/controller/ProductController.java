@@ -39,4 +39,9 @@ public class ProductController {
         productService.deleteByCode(code);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/income-report")
+    public List<Product> incomeRepost() {
+        return productService.incomeReport();
+    }
 }
