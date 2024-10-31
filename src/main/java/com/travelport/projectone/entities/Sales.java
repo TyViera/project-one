@@ -1,9 +1,8 @@
 package com.travelport.projectone.entities;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
 public class Sales {
 
     @EmbeddedId

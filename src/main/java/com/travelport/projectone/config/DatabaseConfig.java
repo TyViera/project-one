@@ -1,4 +1,4 @@
-package com.travelport.config;
+package com.travelport.projectone.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -58,10 +58,10 @@ public class DatabaseConfig {
 
     private Properties hibernateProperties() {
         var prop = new Properties();
-        // Using SQLServer
-        prop.put("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
-        prop.put("hibernate.show_sql", "true");
-        prop.put("hibernate.hbm2ddl.auto", "update");
+        // Using mySQL
+        prop.setProperty("hibernate.hbm2ddl.auto", "update");
+        prop.setProperty("hibernate.show_sql", "true");
+        prop.setProperty("hibernate.format_sql", "true");
         return prop;
     }
 

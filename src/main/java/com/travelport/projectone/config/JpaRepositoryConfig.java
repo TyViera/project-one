@@ -8,7 +8,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.travelport.projectone.jpa")
-public class JpaRepositoryConfig {
+public class    JpaRepositoryConfig {
 
     @Bean
     // Transaction manager for the configured EntityManagerFactory,
