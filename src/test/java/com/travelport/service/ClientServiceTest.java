@@ -2,9 +2,11 @@ package com.travelport.service;
 
 import com.travelport.entities.Client;
 import com.travelport.persistence.ClientDao;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,18 +15,15 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-
+@ExtendWith(MockitoExtension.class)
 class ClientServiceTest {
 
-    // Under Test Component
+    // Under Test Components
+    @InjectMocks
     private ClientService clientService;
-    private ClientDao clientDao;
 
-    @BeforeEach
-    void init() {
-        clientDao = Mockito.mock(ClientDao.class);
-        clientService = new ClientService(clientDao);
-    }
+    @Mock
+    private ClientDao clientDao;
 
     @Test
     void saveClientWithValidClient_ShouldCallDaoSave() {
@@ -121,7 +120,6 @@ class ClientServiceTest {
         Client clientToUpdate = null;
 
         assertThrows(IllegalArgumentException.class, () -> clientService.updateClient(clientToUpdate));
-
 
     }
 

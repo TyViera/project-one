@@ -19,6 +19,9 @@ public class ProductService {
     }
 
     public void saveProduct(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("product cannot be null");
+        }
         productDao.save(product);
     }
 
@@ -31,6 +34,9 @@ public class ProductService {
     }
 
     public void updateProduct(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("product cannot be null");
+        }
         productDao.update(product);
     }
 
