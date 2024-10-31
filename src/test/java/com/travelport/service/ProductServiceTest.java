@@ -39,9 +39,7 @@ class ProductServiceTest {
     @Test
     void saveProductWithInvalidProduct_ShouldThrowException() {
         Product product = null;
-
         assertThrows(IllegalArgumentException.class, () -> productService.saveProduct(product));
-
     }
 
     @Test
