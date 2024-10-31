@@ -4,12 +4,14 @@ import com.travelport.projectone.entities.Client;
 import com.travelport.projectone.persistence.ClientDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
 @Component
+@Transactional
 public class ClientDaoImpl implements ClientDao {
 
     @PersistenceContext // JPA

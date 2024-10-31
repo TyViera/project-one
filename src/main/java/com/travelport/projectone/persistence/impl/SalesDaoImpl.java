@@ -3,10 +3,14 @@ package com.travelport.projectone.persistence.impl;
 import com.travelport.projectone.entities.Sales;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
+@Transactional
 public class SalesDaoImpl {
     @PersistenceContext // JPA
     private EntityManager entityManager;
