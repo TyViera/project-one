@@ -4,11 +4,12 @@ import com.travelport.entities.Product;
 import com.travelport.persistence.ProductDao;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -36,9 +37,10 @@ class ProductServiceTest {
         verify(productDao, times(1)).save(product);
     }
 
-    @Test
-    void saveProductWithInvalidProduct_ShouldThrowException() {
-        Product product = null;
+    @ParameterizedTest
+    @NullSource
+    void saveProductWithInvalidProduct_ShouldThrowException(Product product) {
+//        Product product = null;
         assertThrows(IllegalArgumentException.class, () -> productService.saveProduct(product));
     }
 
@@ -100,9 +102,10 @@ class ProductServiceTest {
         verify(productDao, times(1)).update(product);
     }
 
-    @Test
-    void updateProduct_WithNullProduct_ShouldThrowException() {
-        Product product = null;
+    @ParameterizedTest
+    @NullSource
+    void updateProduct_WithNullProduct_ShouldThrowException(Product product) {
+//        Product product = null;
 
         assertThrows(IllegalArgumentException.class, () -> productService.updateProduct(product));
     }

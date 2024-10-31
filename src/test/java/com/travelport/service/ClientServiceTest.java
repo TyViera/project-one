@@ -4,6 +4,8 @@ import com.travelport.entities.Client;
 import com.travelport.persistence.ClientDao;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -40,10 +42,11 @@ class ClientServiceTest {
         verify(clientDao, times(1)).save(clientToSave);
     }
 
-    @Test
-    void saveClientWithNullClient_ShouldThrowException() {
+    @ParameterizedTest
+    @NullSource
+    void saveClientWithNullClient_ShouldThrowException(Client clientToSave) {
         // Given
-        Client clientToSave = null;
+        // Client clientToSave = null;
 
         // When + Then
         assertThrows(IllegalArgumentException.class, () -> clientService.saveClient(clientToSave));
@@ -115,9 +118,10 @@ class ClientServiceTest {
         verify(clientDao, times(1)).save(clientToUpdate);
     }
 
-    @Test
-    void updateClientNull_ShouldThrowException() {
-        Client clientToUpdate = null;
+    @ParameterizedTest
+    @NullSource
+    void updateClientNull_ShouldThrowException(Client clientToUpdate) {
+        //Client clientToUpdate = null;
 
         assertThrows(IllegalArgumentException.class, () -> clientService.updateClient(clientToUpdate));
 
