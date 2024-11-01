@@ -11,10 +11,13 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "nif", nullable = false, length = 20, unique = true)
     private String nif;
 
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
+
+    @Column(name = "address", nullable = false, length = 255)
     private String address;
 
     public Integer getId() {

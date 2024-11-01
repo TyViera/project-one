@@ -11,9 +11,10 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "code", nullable = false, length = 50, unique = true)
     private String code;
 
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
 
 
