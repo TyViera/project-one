@@ -1,5 +1,6 @@
 package com.travelport.projectone.persistence.impl;
 
+import com.travelport.projectone.dto.ReportResponse;
 import com.travelport.projectone.dto.SaleResponse;
 import com.travelport.projectone.entities.Sale;
 import com.travelport.projectone.entities.SaleDetail;
@@ -46,8 +47,13 @@ public class SaleDaoImpl implements SaleDao {
     }
 
     @Override
-    public Object getIncomeReport() {
-        return null; /// TODO: Implementar la lógica de reportes si es necesario
+    public List<ReportResponse> getIncomeReport() {
+        String jpql = "SELECT sd.product.id, SUM(sd.quantity) AS quantity " +
+                "FROM SaleDetail sd " +
+                "GROUP BY sd.product.id " +
+                "ORDER BY quantity DESC";
+        return entityManager.createQuery(jpql, ReportResponse.class)
+                .getResultList();
     }
 
     @Override

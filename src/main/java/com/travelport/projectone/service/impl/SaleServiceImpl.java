@@ -1,9 +1,6 @@
 package com.travelport.projectone.service.impl;
 
-import com.travelport.projectone.dto.ProductRequest;
-import com.travelport.projectone.dto.SaleProductResponse;
-import com.travelport.projectone.dto.SaleRequest;
-import com.travelport.projectone.dto.SaleResponse;
+import com.travelport.projectone.dto.*;
 import com.travelport.projectone.entities.Client;
 import com.travelport.projectone.entities.Product;
 import com.travelport.projectone.entities.Sale;
@@ -86,8 +83,20 @@ public class SaleServiceImpl implements SaleService {
     }
 
     @Override
-    public Object getIncomeReport() {
-        return null;
+    public List<ReportResponse> getIncomeReport() {
+        List<ReportResponse> reportResponses = saleDao.getIncomeReport();
+        List<ReportResponse> completedReportResponses = new ArrayList<>();
+
+        for (ReportResponse reportResponse : reportResponses) {
+            Product product = productDao.findById(reportResponse.getId()).get();
+
+            if (product != null) {
+                reportResponse.setName(product.getName());
+            }
+            completedReportResponses.add(reportResponse);
+        }
+        return completedReportResponses;
     }
+
 
 }

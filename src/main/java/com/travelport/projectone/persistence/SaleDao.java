@@ -1,6 +1,7 @@
 
 package com.travelport.projectone.persistence;
 
+import com.travelport.projectone.dto.ReportResponse;
 import com.travelport.projectone.dto.SaleResponse;
 import com.travelport.projectone.entities.Sale;
 import com.travelport.projectone.entities.SaleDetail;
@@ -14,7 +15,7 @@ public interface SaleDao {
 
     List<Sale> findAll(Integer clientId);
 
-    Object getIncomeReport();
+    List<ReportResponse> getIncomeReport();
 
     List<SaleDetail> findSaleDetailsBySaleId(Integer saleId);
 }

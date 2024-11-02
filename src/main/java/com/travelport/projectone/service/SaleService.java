@@ -1,6 +1,7 @@
 
 package com.travelport.projectone.service;
 
+import com.travelport.projectone.dto.ReportResponse;
 import com.travelport.projectone.dto.SaleRequest;
 import com.travelport.projectone.dto.SaleResponse;
 import com.travelport.projectone.entities.Sale;
@@ -15,5 +16,5 @@ public interface SaleService {
 
     public List<SaleResponse> findAll(Integer clientId);
 
-    public Object getIncomeReport();
+    public List<ReportResponse> getIncomeReport();
 }

@@ -1,6 +1,7 @@
 
 package com.travelport.projectone.controller;
 
+import com.travelport.projectone.dto.ReportResponse;
 import com.travelport.projectone.dto.SaleRequest;
 import com.travelport.projectone.dto.SaleResponse;
 import com.travelport.projectone.service.SaleService;
@@ -29,10 +30,9 @@ public class SaleController {
         return "all good";
     }
 
-    @GetMapping("/report/{id}")
-    public String incomeReport(@PathVariable("id") Integer productId) {
-        /*List<Object[]> report = saleService.incomeReport(productId);
-        return ResponseEntity.ok(report);*/
-        return "en fase de desarrollo";
+    @GetMapping("/report")
+    public ResponseEntity<List<ReportResponse>> incomeReport() {
+        List<ReportResponse> reportResponses = saleService.getIncomeReport();
+        return ResponseEntity.ok(reportResponses);
     }
 }
