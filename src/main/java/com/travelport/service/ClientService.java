@@ -37,7 +37,7 @@ public class ClientService {
         if (client == null) {
             throw new IllegalArgumentException("Client cannot be null");
         }
-        clientDao.save(client);
+        clientDao.update(client);
     }
 
     public void deleteClientByNif(String nif) {

@@ -11,9 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/sales")
@@ -96,6 +94,7 @@ public class SalesController {
         if (clientSalesOutputDTO.getSales().isEmpty() ) {
             return ResponseEntity.notFound().build();
         }
+
         return ResponseEntity.ok(clientSalesOutputDTO);
     }
 }

@@ -115,7 +115,7 @@ class ClientServiceTest {
 
         clientService.updateClient(clientToUpdate);
 
-        verify(clientDao, times(1)).save(clientToUpdate);
+        verify(clientDao, times(1)).update(clientToUpdate);
     }
 
     @ParameterizedTest

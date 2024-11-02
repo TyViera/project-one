@@ -15,8 +15,8 @@ public class ReportController {
 
     private final ReportService reportService;
 
-    public ReportController (ReportService reportSerive) {
-        this.reportService = reportSerive;
+    public ReportController (ReportService reportService) {
+        this.reportService = reportService;
     }
 
     @GetMapping("/products")

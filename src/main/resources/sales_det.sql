@@ -1,5 +1,5 @@
 CREATE TABLE `sales_det` (
-                             `sale_id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+                             `sale_id` INT(11) UNSIGNED NOT NULL,
                              `product_code` int NOT NULL,
                              `quantity` int NOT NULL,
                              PRIMARY KEY (`sale_id`, `product_code`),
