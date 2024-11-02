@@ -11,6 +11,7 @@ import com.travelport.projectone.persistence.SaleDao;
 import com.travelport.projectone.service.SaleService;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,28 +29,28 @@ public class SaleServiceImpl implements SaleService {
     }
 
     @Override
-    public String incomeReport(Integer productId) {
-        return "en fase de desarrollo";
-    }
-
-    @Override
     public Sale saveSale(SaleRequest saleRequest) {
         if (!saleRequest.areProductsQuantityValid()) {
             throw new IllegalArgumentException("Product quantities are not valid.");
         }
 
-        Client client = clientDao.findById(saleRequest.getClientId()).orElseThrow(() -> new IllegalArgumentException("Client not found."));
+        Client client = clientDao.findById(saleRequest.getClientId())
+                .orElseThrow(() -> new IllegalArgumentException("Client not found."));
         Sale sale = new Sale();
         sale.setClient(client);
+        sale.setSellDate(new Timestamp(System.currentTimeMillis()));
+
         saleDao.saveSale(sale);
 
         for (ProductRequest product : saleRequest.getProducts()) {
-            Product fproduct = productDao.findById(product.getId()).get();
+            Product fproduct = productDao.findById(product.getId())
+                    .orElseThrow(() -> new IllegalArgumentException("Product not found with id: " + product.getId()));
 
             SaleDetail saleDetail = new SaleDetail();
             saleDetail.setQuantity(product.getQuantity());
-            saleDetail.setProduct(fproduct);
-            saleDetail.setSale(sale);
+            saleDetail.setProductId(product.getId());
+            saleDetail.setSaleId(sale.getId());
+
             saleDao.saveSaleDetail(saleDetail);
         }
         return sale;

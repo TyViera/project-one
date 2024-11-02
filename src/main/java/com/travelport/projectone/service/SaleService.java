@@ -10,8 +10,6 @@ import com.travelport.projectone.entities.SaleDetail;
 import java.util.List;
 
 public interface SaleService {
-    public String incomeReport(Integer productId);
-
     public Sale saveSale(SaleRequest saleRequest);
 
     public List<SaleResponse> findAll(Integer clientId);

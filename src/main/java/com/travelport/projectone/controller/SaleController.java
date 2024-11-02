@@ -4,6 +4,7 @@ package com.travelport.projectone.controller;
 import com.travelport.projectone.dto.ReportResponse;
 import com.travelport.projectone.dto.SaleRequest;
 import com.travelport.projectone.dto.SaleResponse;
+import com.travelport.projectone.entities.Sale;
 import com.travelport.projectone.service.SaleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +25,8 @@ public class SaleController {
     }
 
     @PostMapping("/sell")
-    public String sellProducts(@RequestBody SaleRequest saleRequest){
-       /* if(!saleRequest.areProductsQuantityValid()) return null;
-        saleService.saveSale(saleRequest);*/
-        return "all good";
+    public ResponseEntity<Sale> sellProducts(@RequestBody SaleRequest saleRequest) {
+        return ResponseEntity.ok(saleService.saveSale(saleRequest));
     }
 
     @GetMapping("/report")

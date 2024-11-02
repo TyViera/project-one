@@ -3,7 +3,7 @@ package com.travelport.projectone.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -18,7 +18,7 @@ public class Sale {
     private Client client;
 
     @Column(name = "sell_date", nullable = false)
-    private Date sellDate;
+    private Timestamp sellDate;
 
     public Integer getId() {
         return id;
@@ -36,11 +36,11 @@ public class Sale {
         this.client = client;
     }
 
-    public Date getSellDate() {
+    public Timestamp getSellDate() {
         return sellDate;
     }
 
-    public void setSellDate(Date sellDate) {
+    public void setSellDate(Timestamp sellDate) {
         this.sellDate = sellDate;
     }
 

@@ -21,12 +21,10 @@ public class SaleDetail {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    // Relación con Sale para poder acceder a la entidad completa si es necesario
     @ManyToOne
     @JoinColumn(name = "sale_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Sale sale;
 
-    // Relación con Product para acceder a la entidad completa
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Product product;
