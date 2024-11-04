@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.transaction.TransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -40,19 +41,22 @@ public class DatabaseConfig {
     }
 
     @Bean
-    public LocalSessionFactoryBean entityManagerFactory() {
-        var sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.travelport.projectone.entities");
-        sessionFactory.setHibernateProperties(hibernateProperties());
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        var em = new LocalContainerEntityManagerFactoryBean();
+        em.setDataSource(dataSource());
+        em.setPackagesToScan("com.travelport.projectone.entities");
 
-        return sessionFactory;
+        var vendorAdapter = new HibernateJpaVendorAdapter();
+        em.setJpaVendorAdapter(vendorAdapter);
+        em.setJpaProperties(hibernateProperties());
+
+        return em;
     }
 
     @Bean
-    public TransactionManager transactionManager() {
-        var transactionManager = new HibernateTransactionManager();
-        transactionManager.setSessionFactory(entityManagerFactory().getObject());
+    public PlatformTransactionManager transactionManager() {
+        var transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
     }
 
@@ -60,8 +64,7 @@ public class DatabaseConfig {
         var prop = new Properties();
         prop.put("hibernate.show_sql", "true");
         prop.put("hibernate.hbm2ddl.auto", "update");
+        prop.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         return prop;
     }
-
-
 }

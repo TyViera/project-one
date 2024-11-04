@@ -44,7 +44,10 @@ public class ClientController {
 
     @GetMapping("/sales/{nif}")
     public ResponseEntity<List<Purchase>> seePastSales(@PathVariable("nif") String nif) {
-        clientService.seePastSales(nif);
-        return ResponseEntity.noContent().build();
+        List<Purchase> purchases = clientService.seePastSales(nif);
+        if (purchases == null || purchases.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(purchases);
     }
 }
