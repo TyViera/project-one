@@ -1,6 +1,7 @@
 package com.travelport.projectone.controller;
 
 import com.travelport.projectone.config.DatabaseConfig;
+import com.travelport.projectone.config.JpaRepositoryConfig;
 import com.travelport.projectone.config.WebAppConfig;
 import com.travelport.projectone.config.WebAppInitializer;
 import com.travelport.projectone.persistence.impl.ClientDaoImpl;
@@ -20,6 +21,7 @@ import javax.sql.DataSource;
 @ContextConfiguration(classes = {
         WebAppConfig.class,
         WebAppInitializer.class,
+        JpaRepositoryConfig.class,
         DatabaseConfig.class,
         ClientController.class,
         ClientDaoImpl.class

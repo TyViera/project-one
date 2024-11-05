@@ -1,7 +1,8 @@
-package com.travelport.projectone.service;
+package com.travelport.projectone.service.impl;
 
 import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.PurchaseDao;
+import com.travelport.projectone.service.PurchaseService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

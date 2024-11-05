@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.travelport")
+@ComponentScan(basePackages = "com.travelport.projectone")
 public class WebAppConfig implements WebMvcConfigurer {
 
     @Override

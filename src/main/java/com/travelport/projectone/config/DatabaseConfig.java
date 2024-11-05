@@ -1,5 +1,6 @@
 package com.travelport.projectone.config;
 
+import java.util.Map;
 import java.util.Properties;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -7,10 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -41,22 +41,24 @@ public class DatabaseConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        var em = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(dataSource());
-        em.setPackagesToScan("com.travelport.projectone.entities");
+    public LocalSessionFactoryBean entityManagerFactory() {
+        var sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setDataSource(dataSource());
+        sessionFactory.setPackagesToScan("com.travelport.projectone.entities");
+        sessionFactory.setHibernateProperties(hibernateProperties());
 
-        var vendorAdapter = new HibernateJpaVendorAdapter();
-        em.setJpaVendorAdapter(vendorAdapter);
-        em.setJpaProperties(hibernateProperties());
+        // xml mapping - in the past xml files were used to map entities
+        // sessionFactory.setMappingResources("com/travelport/entities/User.hbm.xml");
 
-        return em;
+        // annotated mapping - in case you want to add more entities
+        //sessionFactory.setAnnotatedClasses(User.class);
+        return sessionFactory;
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager() {
-        var transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+    public TransactionManager transactionManager() {
+        var transactionManager = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(entityManagerFactory().getObject());
         return transactionManager;
     }
 

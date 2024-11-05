@@ -12,7 +12,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(final ServletContext servletContext) throws ServletException {
         var appContext = new AnnotationConfigWebApplicationContext();
-        appContext.scan("com.travelport");
+        appContext.scan("com.travelport.projectone");
         servletContext.addListener(new ContextLoaderListener(appContext));
 
         var servlet =

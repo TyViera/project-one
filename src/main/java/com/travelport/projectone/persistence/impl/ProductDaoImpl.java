@@ -30,7 +30,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public List<Product> list() {
-        var query = em.createQuery("from Product ", Product.class);
+        var query = em.createQuery("from Product", Product.class);
         return query.getResultList();
     }
 
