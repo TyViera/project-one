@@ -1,0 +1,6 @@
+CREATE TABLE `product` (
+    `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`)
+    );
+COMMIT;
