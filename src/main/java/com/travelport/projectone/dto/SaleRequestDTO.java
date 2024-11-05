@@ -2,9 +2,9 @@ package com.travelport.projectone.dto;
 
 import java.util.List;
 
-public class SaleRequest {
+public class SaleRequestDTO {
   private String clientId;
-  private List<ProductRequest> products;
+  private List<ProductRequestDTO> products;
 
   public String getClientId() {
     return clientId;
@@ -14,17 +14,17 @@ public class SaleRequest {
     this.clientId = clientId;
   }
 
-  public List<ProductRequest> getProducts() {
+  public List<ProductRequestDTO> getProducts() {
     return products;
   }
 
-  public void setProducts(List<ProductRequest> products) {
+  public void setProducts(List<ProductRequestDTO> products) {
     this.products = products;
   }
 
   public Boolean areProductsQuantityValid(){
     boolean validProducts=true;
-    for(ProductRequest product: products){
+    for(ProductRequestDTO product: products){
       if(!product.isQuantityValid()) validProducts=false;
     }
     return validProducts;

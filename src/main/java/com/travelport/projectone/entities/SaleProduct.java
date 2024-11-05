@@ -5,13 +5,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@IdClass(SaleProduct.SaleProductPK.class)
 @Table(name = "sales_products")
 public class SaleProduct {
 
   @Id
   @Column(name = "sale_id", nullable = false)
-  private Integer saleId;
+  private int saleId;
 
   @Id
   @Column(name = "product_id", nullable = false)
@@ -27,30 +26,6 @@ public class SaleProduct {
   @ManyToOne
   @JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
   private Product product;
-
-  public static class SaleProductPK implements Serializable {
-    protected Integer saleId;
-    protected Integer productId;
-
-    public SaleProductPK() {}
-
-    public SaleProductPK(Integer saleId, Integer productId) {
-      this.saleId = saleId;
-      this.productId = productId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (!(o instanceof SaleProductPK that)) return false;
-      return Objects.equals(saleId, that.saleId) && Objects.equals(productId, that.productId);
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(saleId, productId);
-    }
-  }
 
   public Integer getSaleId() {
     return saleId;
@@ -82,6 +57,9 @@ public class SaleProduct {
 
   public void setSale(Sale sale) {
     this.sale = sale;
+    if (sale != null) {
+      this.saleId = sale.getId();
+    }
   }
 
   public Product getProduct() {
@@ -90,6 +68,9 @@ public class SaleProduct {
 
   public void setProduct(Product product) {
     this.product = product;
+    if (product != null) {
+      this.productId = product.getId();
+    }
   }
 
   @Override

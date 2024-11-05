@@ -55,6 +55,9 @@ public class Sale {
 
   public void setSaleProducts(List<SaleProduct> saleProducts) {
     this.saleProducts = saleProducts;
+    for (SaleProduct saleProduct : saleProducts) {
+      saleProduct.setSale(this);
+    }
   }
 
   @Override

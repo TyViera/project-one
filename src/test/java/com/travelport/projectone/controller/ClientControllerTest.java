@@ -157,13 +157,13 @@ public class ClientControllerTest {
 
   @Test
   void deleteClientTest() throws Exception {
-    mockMvc.perform(delete("/clients/{clientId}", "87654321B")
+    mockMvc.perform(delete("/clients/{clientId}", "45182096E")
             .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isNoContent());
 
     try (var conn = dataSource.getConnection()) {
       var statement = conn.prepareStatement("SELECT * FROM client WHERE id = ?");
-      statement.setString(1, "87654321B");
+      statement.setString(1, "45182096E");
       ResultSet resultSet = statement.executeQuery();
       assertFalse(resultSet.next());
     }
