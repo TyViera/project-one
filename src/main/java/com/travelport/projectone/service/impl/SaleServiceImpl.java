@@ -31,6 +31,8 @@ public class SaleServiceImpl implements SaleService {
         this.productDao = productDao;
     }
 
+    private Boolean errorMappingProducts = false;
+
     @Override
     public Optional<SaleDto> save(PurchaseDto req) {
         var client = clientDao.findById(req.getClientNif());
@@ -44,10 +46,18 @@ public class SaleServiceImpl implements SaleService {
 
         newSaleProductList.forEach(inputProduct -> {
             var productOptional = productDao.findById(inputProduct.getProductId());
-            if (productOptional.isEmpty()) return;
+            if (productOptional.isEmpty()) {
+                errorMappingProducts = true;
+                return;
+            }
 
             var product = productOptional.get();
 
+
+            if (inputProduct.getAmount() <= 0) {
+                errorMappingProducts = true;
+                return;
+            }
             var productTimesSold = product.getTimesSold();
             product.setTimesSold(productTimesSold + inputProduct.getAmount());
             productDao.save(product);
@@ -55,6 +65,8 @@ public class SaleServiceImpl implements SaleService {
             var newSaleProduct = new SaleProduct(newSale, product, inputProduct.getAmount());
             saleProductDao.save(newSaleProduct);
         });
+
+        if (errorMappingProducts) return Optional.empty();
 
         var sale = new SaleDto(newSaleId, newSaleProductList);
         return Optional.of(sale);
