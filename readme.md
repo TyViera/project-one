@@ -15,3 +15,6 @@ Notes:
 - Stock for products is infinite
 - The project can be done individually or in pairs.
 - Dealine: November 5th.
+
+![jacoco-coverage](https://github.com/user-attachments/assets/183cdd85-f3ba-4a83-98e0-f662ffaf7580)
+
