@@ -19,7 +19,9 @@ public class ClientController {
 
     @GetMapping
     public List<Client> getClients() {
-        return clientService.getClients();
+        var clients = clientService.getClients();
+        System.out.println(clients);
+        return clients;
     }
 
     @PostMapping

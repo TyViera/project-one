@@ -16,7 +16,9 @@ public class PurchaseController {
 
     @GetMapping
     public List<Purchase> getPurchase() {
-        return purchaseService.getPurchase();
+        var purchases = purchaseService.getPurchase();
+        System.out.println(purchases);
+        return purchases;
     }
 
     @PostMapping

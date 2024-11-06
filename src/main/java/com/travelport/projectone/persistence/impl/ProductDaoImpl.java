@@ -28,7 +28,7 @@ public class ProductDaoImpl implements ProductDao {
     public void save(Product product) {em.persist(product);}
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional
     public List<Product> list() {
         var query = em.createQuery("from Product", Product.class);
         return query.getResultList();
