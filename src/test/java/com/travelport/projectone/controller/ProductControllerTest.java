@@ -10,6 +10,7 @@ import com.travelport.projectone.service.impl.ProductServiceImpl;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -38,7 +39,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         ProductServiceImpl.class,
         Product.class
 })
-@Transactional
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class ProductControllerTest {
 
     @Autowired
@@ -50,16 +51,16 @@ class ProductControllerTest {
     MockMvc mockMvc;
 
     private void executeInitialData() throws SQLException {
-        var conn = dataSource.getConnection();
+        try (var conn = dataSource.getConnection()) {
+            try (var statement = conn.createStatement()) {
+                statement.execute("ALTER TABLE products ALTER COLUMN id RESTART WITH 1");
+            }
 
-        conn.createStatement().execute("ALTER TABLE products ALTER COLUMN id RESTART WITH 1");
-
-        var statement = conn.prepareStatement("INSERT INTO products VALUES (DEFAULT, ?, DEFAULT)");
-        statement.setString(1, "T-Shirt");
-
-        statement.executeUpdate();
-
-        conn.close();
+            try (var statement = conn.prepareStatement("INSERT INTO products VALUES (DEFAULT, ?, DEFAULT)")) {
+                statement.setString(1, "T-Shirt");
+                statement.executeUpdate();
+            }
+        }
     }
 
     @BeforeEach
@@ -69,15 +70,15 @@ class ProductControllerTest {
     }
 
     public void clearData() throws SQLException {
-        var conn = dataSource.getConnection();
-        var statement = conn.prepareStatement("DELETE FROM products");
-        statement.execute();
+        try (var conn = dataSource.getConnection()) {
+            try (var statement = conn.prepareStatement("DELETE FROM products")) {
+                statement.execute();
+            }
+        }
     }
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given new product When post Then return ok")
     void test_post_success() throws Exception {
         // When (do actions)
@@ -94,8 +95,6 @@ class ProductControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given new product When post with bad format Then return bad request error")
     void test_post_badRequestError() throws Exception {
         // When (do actions)
@@ -112,8 +111,6 @@ class ProductControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given existing product When patch Then return ok")
     void test_update_success() throws Exception {
         executeInitialData();
@@ -132,8 +129,6 @@ class ProductControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given empty database When patch Then return not found error")
     void test_update_notFoundError() throws Exception {
         // When (do actions)
@@ -149,10 +144,7 @@ class ProductControllerTest {
     }
 
     @Test
-    @Disabled
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given empty database When delete Then return error not found")
     void test_delete_notFoundError() throws Exception {
         System.out.println("starting test_delete_notFoundError");
@@ -167,10 +159,7 @@ class ProductControllerTest {
     }
 
     @Test
-    @Disabled
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given client exists in database When delete Then return ok")
     void test_delete_success() throws Exception {
         // Given (set up)
@@ -183,8 +172,6 @@ class ProductControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("When get Then return ok")
     void test_get_success() throws Exception {
         // When (do actions)
@@ -194,8 +181,6 @@ class ProductControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given empty database When get by id Then return error not found")
     void test_getById_notFoundError() throws Exception {
         // When (do actions)
@@ -205,8 +190,6 @@ class ProductControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given product exists in database When get by id Then return ok")
     void test_getById_success() throws Exception {
         // Given (set up)

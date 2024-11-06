@@ -9,6 +9,7 @@ import com.travelport.projectone.service.impl.ClientServiceImpl;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -35,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         ClientServiceImpl.class,
         Client.class
 })
-@Transactional
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class ClientControllerTest {
 
     @Autowired
@@ -48,18 +49,15 @@ class ClientControllerTest {
     String sampleUserId = "123";
 
     private void executeInitialData() throws SQLException {
-        var conn = dataSource.getConnection();
+        try (var conn = dataSource.getConnection()) {
+            try (var statement = conn.prepareStatement("INSERT INTO clients VALUES (?, ?, ?)")) {
+                statement.setString(1, sampleUserId);
+                statement.setString(2, "John Doe");
+                statement.setString(3, "Barcelona");
 
-//        conn.createStatement().execute("ALTER TABLE clients ALTER COLUMN nif RESTART WITH 1");
-
-        var statement = conn.prepareStatement("INSERT INTO clients VALUES (?, ?, ?)");
-        statement.setString(1, sampleUserId);
-        statement.setString(2, "John Doe");
-        statement.setString(3, "Barcelona");
-
-        statement.executeUpdate();
-
-        conn.close();
+                statement.executeUpdate();
+            }
+        }
     }
 
     @BeforeEach
@@ -69,15 +67,14 @@ class ClientControllerTest {
     }
 
     public void clearData() throws SQLException {
-        var conn = dataSource.getConnection();
-        var statement = conn.prepareStatement("DELETE FROM clients");
-        statement.execute();
+        try (var conn = dataSource.getConnection()) {
+            var statement = conn.prepareStatement("DELETE FROM clients");
+            statement.execute();
+        }
     }
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given new user When post Then return ok")
     void test_post_success() throws Exception {
         // When (do actions)
@@ -95,10 +92,7 @@ class ClientControllerTest {
     }
 
     @Test
-    @Disabled
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given id already exists When post Return error unprocessable entity")
     void test_post_idAlreadyExists_error() throws Exception {
         // Given (set up)
@@ -120,8 +114,6 @@ class ClientControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given existing user When patch Then return ok")
     void test_update_success() throws Exception {
         executeInitialData();
@@ -140,8 +132,6 @@ class ClientControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given empty database When patch Then return not found error")
     void test_update_notFoundError() throws Exception {
          // When (do actions)
@@ -157,10 +147,7 @@ class ClientControllerTest {
     }
 
     @Test
-    @Disabled
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given empty database When delete Then return error not found")
     void test_delete_notFoundError() throws Exception {
         System.out.println("starting test_delete_notFoundError");
@@ -176,8 +163,6 @@ class ClientControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given client exists in database When delete Then return ok")
     void test_delete_success() throws Exception {
         // Given (set up)
@@ -190,8 +175,6 @@ class ClientControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("When get Then return ok")
     void test_get_success() throws Exception {
         // When (do actions)
@@ -201,8 +184,6 @@ class ClientControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given empty database When get by id Then return error not found")
     void test_getById_notFoundError() throws Exception {
         // When (do actions)
@@ -212,8 +193,6 @@ class ClientControllerTest {
 
     @Test
     @Transactional
-    @Rollback
-    @Timeout(4)
     @DisplayName("Given client exists in database When get by id Then return ok")
     void test_getById_success() throws Exception {
         // Given (set up)
