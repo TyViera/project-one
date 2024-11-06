@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Service
 public class SaleServiceImpl implements SaleService {
@@ -31,8 +32,6 @@ public class SaleServiceImpl implements SaleService {
         this.productDao = productDao;
     }
 
-    private Boolean errorMappingProducts = false;
-
     @Override
     public Optional<SaleDto> save(PurchaseDto req) {
         var client = clientDao.findById(req.getClientNif());
@@ -44,10 +43,12 @@ public class SaleServiceImpl implements SaleService {
         var newSaleId = savedSale.getId();
         var newSaleProductList = req.getProductList();
 
+        final var errorMappingProducts = new AtomicBoolean(false);
+
         newSaleProductList.forEach(inputProduct -> {
             var productOptional = productDao.findById(inputProduct.getProductId());
             if (productOptional.isEmpty()) {
-                errorMappingProducts = true;
+                errorMappingProducts.set(true);
                 return;
             }
 
@@ -55,7 +56,7 @@ public class SaleServiceImpl implements SaleService {
 
 
             if (inputProduct.getAmount() <= 0) {
-                errorMappingProducts = true;
+                errorMappingProducts.set(true);
                 return;
             }
             var productTimesSold = product.getTimesSold();
@@ -66,7 +67,7 @@ public class SaleServiceImpl implements SaleService {
             saleProductDao.save(newSaleProduct);
         });
 
-        if (errorMappingProducts) return Optional.empty();
+        if (errorMappingProducts.get()) return Optional.empty();
 
         var sale = new SaleDto(newSaleId, newSaleProductList);
         return Optional.of(sale);
