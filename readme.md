@@ -16,4 +16,5 @@ Notes:
 - The project can be done individually or in pairs.
 - Dealine: November 5th.
 
-![jacoco-coverage](https://github.com/user-attachments/assets/e529cc76-e908-4a16-9c08-ee061af1012c)
+![jacoco-coverage](https://github.com/user-attachments/assets/183cdd85-f3ba-4a83-98e0-f662ffaf7580)
+
