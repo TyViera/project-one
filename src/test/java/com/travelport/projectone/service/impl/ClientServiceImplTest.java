@@ -1,7 +1,6 @@
 package com.travelport.projectone.service.impl;
 
 import com.travelport.projectone.entities.Client;
-import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -76,7 +75,10 @@ class ClientServiceImplTest {
 
     @Test
     void save() {
-
+        var listBeforeSave = clientService.getClients();
+        clientService.save(new Client());
+        var listAfterSave = clientService.getClients();
+        assertTrue(listBeforeSave.size() < listAfterSave.size());
     }
 
     @Test
@@ -85,5 +87,9 @@ class ClientServiceImplTest {
 
     @Test
     void seePastSales() {
+        var nif = "123456789";
+        var listSales = clientService.seePastSales(nif);
+        assertNotNull(listSales);
+        assertTrue(listSales.size() >= 0);
     }
 }
