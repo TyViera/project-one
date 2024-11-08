@@ -16,6 +16,13 @@ public class WebAppConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
+        registry.addViewController("/clientSales").setViewName("clientSales");
+        registry.addViewController("/clientSalesResult").setViewName("clientSalesResult");
+        registry.addViewController("/crudClient").setViewName("crudClient");
+        registry.addViewController("/crudProduct").setViewName("crudProduct");
+        registry.addViewController("/productSales").setViewName("productSales");
+        registry.addViewController("/productSalesResult").setViewName("productSalesResult");
+        registry.addViewController("/sellProduct").setViewName("sellProduct");
     }
 
     @Bean

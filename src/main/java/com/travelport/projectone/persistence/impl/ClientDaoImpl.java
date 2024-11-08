@@ -18,26 +18,31 @@ public class ClientDaoImpl implements ClientDao {
     private EntityManager entityManager;
 
     @Override
+    @Transactional
     public void save(Client client) {
         entityManager.persist(client);
     }
 
     @Override
+    @Transactional
     public List<Client> list() {
         return entityManager.createQuery("SELECT c FROM Client c", Client.class).getResultList();
     }
 
     @Override
+    @Transactional
     public Optional<Client> getClientById(Integer id) {
         return Optional.ofNullable(entityManager.find(Client.class, id));
     }
 
     @Override
+    @Transactional
     public void update(Client client) {
         entityManager.merge(client);
     }
 
     @Override
+    @Transactional
     public Optional<Integer> deleteById(Integer id) {
         Client client = entityManager.find(Client.class, id);
         if (client != null) {

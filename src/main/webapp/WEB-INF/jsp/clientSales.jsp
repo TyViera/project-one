@@ -9,12 +9,12 @@
 <body>
 
 <div>
-    <a href="/index"><button>Home</button></a>
-    <a href="/crudClient"><button>Client CRUD</button></a>
-    <a href="/crudProduct"><button>Product CRUD</button></a>
-    <a href="/sellProduct"><button>Sell</button></a>
-    <a href="/clientSales"><button>Client Sales</button></a>
-    <a href="/productSales"><button>Product Sales</button></a>
+    <a href="/project_one_war/"><button>Home</button></a>
+    <a href="/project_one_war/crudClient"><button>Client CRUD</button></a>
+    <a href="/project_one_war/crudProduct"><button>Product CRUD</button></a>
+    <a href="/project_one_war/sellProduct"><button>Sell</button></a>
+    <a href="/project_one_war/clientSales"><button>Client Sales</button></a>
+    <a href="/project_one_war/productSales"><button>Product Sales</button></a>
 </div>
 
 <div>
