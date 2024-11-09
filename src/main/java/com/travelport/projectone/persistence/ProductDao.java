@@ -13,7 +13,7 @@ public interface ProductDao {
 
     void update(Product product);
 
-    Optional<Integer> deleteByCode(Integer code);
+    void deleteByCode(Integer code);
 
     List<Product> incomeReport();
 }

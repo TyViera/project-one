@@ -1,6 +1,5 @@
 package com.travelport.projectone.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -10,30 +9,28 @@ import java.util.Objects;
 public class Purchase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "client_nif")
-    private Client client;
+    private String clientNif;
+    private Integer productCode;
 
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_code")
-    private Product product;
+    private int quantity;
 
     public Integer getId() { return id; }
 
     public void setId(int id) { this.id = id; }
 
-    public Client getClient() { return client; }
+    public String getClientNif() { return clientNif; }
 
-    public void setClient(Client client) { this.client = client; }
+    public void setClientNif(String clientNif) { this.clientNif = clientNif; }
 
-    public Product getProduct() { return product; }
+    public Integer getProductCode() { return productCode; }
 
-    public void setProduct(Product product) { this.product = product; }
+    public void setProductCode(Integer productCode) { this.productCode = productCode; }
+
+    public int getQuantity() { return quantity; }
+
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
     @Override
     public boolean equals(Object o) {

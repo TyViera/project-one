@@ -24,7 +24,7 @@ public class ProductController {
     public Product postProduct(@RequestBody Product product) { return productService.save(product); }
 
     @GetMapping("/{code}")
-    public ResponseEntity<Product> getClientByNif(@PathVariable("code") Integer code) {
+    public ResponseEntity<Product> getProductByNif(@PathVariable("code") Integer code) {
         var product = productService.findByCode(code);
         return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -34,8 +34,8 @@ public class ProductController {
         return ResponseEntity.ok(productService.update(code, product));
     }
 
-    @DeleteMapping("/{code}")
-    public ResponseEntity<Product> deleteClient(@PathVariable("code") Integer code) {
+    @DeleteMapping
+    public ResponseEntity<Product> deleteProduct(@RequestParam("code") Integer code) {
         productService.deleteByCode(code);
         return ResponseEntity.noContent().build();
     }

@@ -5,7 +5,6 @@ import com.travelport.projectone.persistence.ProductDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
@@ -24,8 +23,14 @@ public class ProductDaoImpl implements ProductDao {
     public ProductDaoImpl() { cache = new HashMap<>();}
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
-    public void save(Product product) {em.persist(product);}
+    @Transactional
+    public void save(Product product) {
+        try {
+            em.persist(product);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     @Transactional
@@ -39,26 +44,32 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
+    @Transactional
     public Optional<Product> getProductByCode(Integer code) {
         var foundPurchase = cache.computeIfAbsent(code, x -> em.find(Product.class, x));
         return Optional.ofNullable(foundPurchase);
     }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional
     public void update(Product product) { em.merge(product); }
 
     @Override
-    public Optional<Integer> deleteByCode(Integer code) {
-        return getProductByCode(code)
-                .map(
-                        product -> {
-                            em.remove(product);
-                            return code;
-                        });
+    @Transactional
+    public void deleteByCode(Integer code) {
+        try
+        {
+            getProductByCode(code).map( product -> {
+                em.remove(product);
+                return code;
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
+    @Transactional
     public List<Product> incomeReport() {
         var query = em.createQuery(
                 "SELECT p FROM Product p " +

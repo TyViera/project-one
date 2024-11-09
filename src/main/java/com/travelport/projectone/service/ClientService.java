@@ -18,7 +18,7 @@ public interface ClientService {
 
     Client save(Client client);
 
-    Client update(String nif, Client client);
+    Optional<Client> update(String nif, Client client);
 
     List<Purchase> seePastSales(String clientNif);
 }

@@ -21,7 +21,7 @@ public class PurchaseController {
         return purchases;
     }
 
-    @PostMapping
+    @PostMapping("/buy")
     public Purchase postPurchase(@RequestBody Purchase purchase) { return purchaseService.save(purchase); }
 
     @GetMapping("/{id}")
@@ -35,8 +35,8 @@ public class PurchaseController {
         return ResponseEntity.ok(purchaseService.update(id, purchase));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Purchase> deletePurchase(@PathVariable("id") Integer id) {
+    @DeleteMapping
+    public ResponseEntity<Purchase> deletePurchase(@RequestParam("id") Integer id) {
         purchaseService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

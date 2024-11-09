@@ -40,16 +40,8 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client update(String nif, Client client) {
-        var fclient = clientDao.getClientByNif(nif);
-        if (fclient.isEmpty()) {
-            return null;
-        }
-        if (client.getNif() == null) {
-            return null;
-        }
-        clientDao.save(client);
-        return client;
+    public Optional<Client> update(String nif, Client client) {
+        return clientDao.update(nif, client);
     }
 
     @Override

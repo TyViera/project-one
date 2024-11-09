@@ -15,5 +15,5 @@ public interface PurchaseDao {
 
     void update(Purchase purchase);
 
-    Optional<Integer> deleteById(Integer id);
+    void deleteById(Integer id);
 }

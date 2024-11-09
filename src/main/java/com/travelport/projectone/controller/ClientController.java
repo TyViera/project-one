@@ -4,10 +4,10 @@ import com.travelport.projectone.entities.Client;
 import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.service.ClientService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/clients")
@@ -19,9 +19,7 @@ public class ClientController {
 
     @GetMapping
     public List<Client> getClients() {
-        var clients = clientService.getClients();
-        System.out.println(clients);
-        return clients;
+        return clientService.getClients();
     }
 
     @PostMapping
@@ -34,18 +32,18 @@ public class ClientController {
     }
 
     @PatchMapping("/{nif}")
-    public ResponseEntity<Client> updateClient(@PathVariable("nif") String nif, @RequestBody Client client) {
+    public ResponseEntity<Optional<Client>> updateClient(@PathVariable("nif") String nif, @RequestBody Client client) {
         return ResponseEntity.ok(clientService.update(nif, client));
     }
 
-    @DeleteMapping("/{nif}")
-    public ResponseEntity<Client> deleteClient(@PathVariable("nif") String nif) {
+    @DeleteMapping
+    public ResponseEntity<Client> deleteClient(@RequestParam("nif") String nif) {
         clientService.deleteByNif(nif);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/sales/{nif}")
-    public ResponseEntity<List<Purchase>> seePastSales(@PathVariable("nif") String nif) {
+    @GetMapping("/sales")
+    public ResponseEntity<List<Purchase>> seePastSales(@RequestParam("nif") String nif) {
         List<Purchase> purchases = clientService.seePastSales(nif);
         if (purchases == null || purchases.isEmpty()) {
             return ResponseEntity.noContent().build();

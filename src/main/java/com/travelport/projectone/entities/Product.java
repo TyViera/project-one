@@ -9,7 +9,6 @@ import java.util.Objects;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer code;
 
     private String name;

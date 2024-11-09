@@ -6,8 +6,6 @@ import com.travelport.projectone.persistence.ClientDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
@@ -26,11 +24,11 @@ public class ClientDaoImpl implements ClientDao {
     public ClientDaoImpl() { cache = new HashMap<>(); }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional
     public void save(Client client) { em.persist(client); }
 
     @Override
-    @Transactional(readOnly = true, propagation = Propagation.NEVER)
+    @Transactional
     public List<Client> list() {
         var query = em.createQuery("from Client", Client.class);
         return query.getResultList();
@@ -47,18 +45,26 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
-    public void update(Client client) {
-        em.merge(client);
+    @Transactional
+    public Optional<Client> update(String nif, Client client) {
+        if (clientExists(nif)) {
+            em.merge(client);
+        }
+        return getClientByNif(nif);
     }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional
     public void deleteByNif(String nif) {
-        getClientByNif(nif).map( client -> {
-            em.remove(client);
-            return nif;
-        });
+        try
+        {
+            getClientByNif(nif).map( client -> {
+                em.remove(client);
+                return nif;
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

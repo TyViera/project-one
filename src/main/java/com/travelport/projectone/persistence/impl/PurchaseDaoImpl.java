@@ -1,6 +1,5 @@
 package com.travelport.projectone.persistence.impl;
 
-import com.travelport.projectone.entities.Client;
 import com.travelport.projectone.entities.Purchase;
 import com.travelport.projectone.persistence.PurchaseDao;
 import jakarta.persistence.EntityManager;
@@ -28,7 +27,7 @@ public class PurchaseDaoImpl implements PurchaseDao {
     public PurchaseDaoImpl() { cache = new HashMap<>(); }
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional
     public void save(Purchase purchase) { em.persist(purchase); }
 
     @Override
@@ -56,14 +55,16 @@ public class PurchaseDaoImpl implements PurchaseDao {
     public void update(Purchase purchase) { em.merge(purchase); }
 
     @Override
-    public Optional<Integer> deleteById(Integer id) {
-        return getPurchaseById(id)
-                .map(
-                        purchase -> {
-                            em.remove(purchase);
-                            return id;
-                        });
+    @Transactional
+    public void deleteById(Integer id) {
+        try
+        {
+            getPurchaseById(id).map( purchase -> {
+                em.remove(purchase);
+                return id;
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-
 }
