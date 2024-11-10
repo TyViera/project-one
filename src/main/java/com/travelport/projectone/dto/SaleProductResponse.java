@@ -1,7 +1,6 @@
 package com.travelport.projectone.dto;
 
 import com.travelport.projectone.entities.Product;
-import jakarta.persistence.Column;
 
 public class SaleProductResponse {
     private Integer id;

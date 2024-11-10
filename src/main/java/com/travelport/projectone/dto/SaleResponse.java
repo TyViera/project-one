@@ -1,7 +1,5 @@
 package com.travelport.projectone.dto;
 
-import com.travelport.projectone.entities.Product;
-
 import java.util.List;
 
 public class SaleResponse {

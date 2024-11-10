@@ -53,7 +53,6 @@ public class SaleDetail {
         }
     }
 
-    // Getters y Setters
     public Integer getSaleId() {
         return saleId;
     }

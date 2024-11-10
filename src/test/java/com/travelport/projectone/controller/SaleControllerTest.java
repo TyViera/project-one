@@ -65,9 +65,24 @@ public class SaleControllerTest {
     public void testGetPastSales() throws Exception {
         executeInitialData();
 
-        String expected = "[{\"saleId\":1,\"products\":[{\"id\":1,\"code\":\"JJK2342\",\"name\":\"IPear\",\"quantity\":2},{\"id\":2,\"code\":\"HGTY67\",\"name\":\"Digital Camera\",\"quantity\":3}]}]";
+        String expected = """
+                [{"saleId":1,"products":[{"id":1,"code":"JJK2342","name":"IPear","quantity":2},{"id":2,"code":"HGTY67","name":"Digital Camera","quantity":3}]}]""";
 
         MvcResult result = mockMvc.perform(get("/sales/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andReturn();
+
+        String content = result.getResponse().getContentAsString();
+        assertEquals(expected.trim(), content.trim());
+    }
+
+    @Test
+    public void testGetPastSales_NoSales() throws Exception {
+        String expected = "[]";
+
+        MvcResult result = mockMvc.perform(get("/sales/10")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -132,6 +147,12 @@ public class SaleControllerTest {
                 deleteTableContents.execute("DELETE FROM sales");
                 deleteTableContents.execute("DELETE FROM clients");
                 deleteTableContents.execute("DELETE FROM products");
+            }
+
+            try (var resetAutoincrement = conn.createStatement()) {
+                resetAutoincrement.execute("ALTER TABLE sales ALTER COLUMN id RESTART WITH 1");
+                resetAutoincrement.execute("ALTER TABLE clients ALTER COLUMN id RESTART WITH 1");
+                resetAutoincrement.execute("ALTER TABLE products ALTER COLUMN id RESTART WITH 1");
             }
 
             try (var resetTableIncrement = conn.createStatement()) {
