@@ -1,0 +1,314 @@
+28-Oct-2024 12:43:37.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+28-Oct-2024 12:43:37.265 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+28-Oct-2024 12:43:37.265 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+28-Oct-2024 12:43:37.265 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+28-Oct-2024 12:43:37.265 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+28-Oct-2024 12:43:37.266 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Oct-2024 12:43:37.266 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\mau.lopezrodriguez\.jdks\corretto-21.0.4
+28-Oct-2024 12:43:37.266 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-LTS
+28-Oct-2024 12:43:37.266 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+28-Oct-2024 12:43:37.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 12:43:37.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\tomcat\10.1.30
+28-Oct-2024 12:43:37.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+28-Oct-2024 12:43:37.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+28-Oct-2024 12:43:37.282 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57531,suspend=y,server=n
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\dev\tomcat\10.1.30
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\temp
+28-Oct-2024 12:43:37.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\logging.properties
+28-Oct-2024 12:43:37.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Oct-2024 12:43:37.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\mau.lopezrodriguez\AppData\Local\JetBrains\IdeaIC2024.2\captureAgent\debugger-agent.jar
+28-Oct-2024 12:43:37.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+28-Oct-2024 12:43:37.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+28-Oct-2024 12:43:37.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+28-Oct-2024 12:43:37.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+28-Oct-2024 12:43:37.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+28-Oct-2024 12:43:37.300 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+28-Oct-2024 12:43:37.315 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+28-Oct-2024 12:43:37.564 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:43:37.589 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [517] milliseconds
+28-Oct-2024 12:43:37.634 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+28-Oct-2024 12:43:37.634 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+28-Oct-2024 12:43:37.645 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml]
+28-Oct-2024 12:43:40.811 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-Oct-2024 12:43:42.004 INFO [main] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.6.1.Final
+28-Oct-2024 12:43:42.194 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService HHH000026: Second-level cache disabled
+28-Oct-2024 12:43:43.400 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.apache.commons.dbcp2.BasicDataSource@95f61c2']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+28-Oct-2024 12:43:45.206 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-Oct-2024 12:43:45.996 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml] has finished in [8,350] ms
+28-Oct-2024 12:43:46.000 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:43:46.020 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [8431] milliseconds
+28-Oct-2024 12:57:20.542 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:57:20.547 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+28-Oct-2024 12:57:20.563 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [project-one-Mauro] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+28-Oct-2024 12:57:20.563 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [project-one-Mauro] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1847)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+28-Oct-2024 12:57:20.569 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:57:20.582 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:57:23.876 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+28-Oct-2024 12:57:23.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+28-Oct-2024 12:57:23.886 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+28-Oct-2024 12:57:23.886 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+28-Oct-2024 12:57:23.886 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+28-Oct-2024 12:57:23.886 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Oct-2024 12:57:23.886 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\mau.lopezrodriguez\.jdks\corretto-21.0.4
+28-Oct-2024 12:57:23.886 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-LTS
+28-Oct-2024 12:57:23.887 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+28-Oct-2024 12:57:23.887 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 12:57:23.887 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\tomcat\10.1.30
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57819,suspend=y,server=n
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\dev\tomcat\10.1.30
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\temp
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\logging.properties
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\mau.lopezrodriguez\AppData\Local\JetBrains\IdeaIC2024.2\captureAgent\debugger-agent.jar
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+28-Oct-2024 12:57:23.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+28-Oct-2024 12:57:23.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+28-Oct-2024 12:57:23.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+28-Oct-2024 12:57:23.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+28-Oct-2024 12:57:23.902 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+28-Oct-2024 12:57:23.908 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+28-Oct-2024 12:57:24.110 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:57:24.140 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [422] milliseconds
+28-Oct-2024 12:57:24.186 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+28-Oct-2024 12:57:24.187 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+28-Oct-2024 12:57:24.196 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml]
+28-Oct-2024 12:57:26.984 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-Oct-2024 12:57:28.114 INFO [main] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.6.1.Final
+28-Oct-2024 12:57:28.282 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService HHH000026: Second-level cache disabled
+28-Oct-2024 12:57:29.343 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.apache.commons.dbcp2.BasicDataSource@1da77a43']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+28-Oct-2024 12:57:31.006 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-Oct-2024 12:57:31.595 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml] has finished in [7,399] ms
+28-Oct-2024 12:57:31.599 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:57:31.613 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7471] milliseconds
+28-Oct-2024 12:59:44.308 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:59:44.312 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+28-Oct-2024 12:59:44.332 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [project-one-Mauro] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+28-Oct-2024 12:59:44.332 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [project-one-Mauro] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1847)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+28-Oct-2024 12:59:44.336 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:59:44.346 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:59:46.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+28-Oct-2024 12:59:46.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\mau.lopezrodriguez\.jdks\corretto-21.0.4
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-LTS
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+28-Oct-2024 12:59:46.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 12:59:46.530 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\tomcat\10.1.30
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57872,suspend=y,server=n
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\dev\tomcat\10.1.30
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 12:59:46.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\temp
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\logging.properties
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\mau.lopezrodriguez\AppData\Local\JetBrains\IdeaIC2024.2\captureAgent\debugger-agent.jar
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+28-Oct-2024 12:59:46.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+28-Oct-2024 12:59:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+28-Oct-2024 12:59:46.549 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+28-Oct-2024 12:59:46.555 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+28-Oct-2024 12:59:46.754 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:59:46.777 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [384] milliseconds
+28-Oct-2024 12:59:46.828 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+28-Oct-2024 12:59:46.828 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+28-Oct-2024 12:59:46.837 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml]
+28-Oct-2024 12:59:49.566 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-Oct-2024 12:59:50.705 INFO [main] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.6.1.Final
+28-Oct-2024 12:59:50.870 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService HHH000026: Second-level cache disabled
+28-Oct-2024 12:59:51.905 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.apache.commons.dbcp2.BasicDataSource@57cd5cc9']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+28-Oct-2024 12:59:53.574 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-Oct-2024 12:59:54.165 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml] has finished in [7,327] ms
+28-Oct-2024 12:59:54.168 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 12:59:54.183 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7404] milliseconds
+28-Oct-2024 13:02:32.298 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:02:32.303 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+28-Oct-2024 13:02:32.325 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [project-one-Mauro] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+28-Oct-2024 13:02:32.325 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [project-one-Mauro] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1847)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+28-Oct-2024 13:02:32.329 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:02:32.338 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:02:34.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+28-Oct-2024 13:02:34.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+28-Oct-2024 13:02:34.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+28-Oct-2024 13:02:34.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\mau.lopezrodriguez\.jdks\corretto-21.0.4
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-LTS
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 13:02:34.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\tomcat\10.1.30
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57924,suspend=y,server=n
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\dev\tomcat\10.1.30
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\temp
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\logging.properties
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Oct-2024 13:02:34.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\mau.lopezrodriguez\AppData\Local\JetBrains\IdeaIC2024.2\captureAgent\debugger-agent.jar
+28-Oct-2024 13:02:34.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+28-Oct-2024 13:02:34.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+28-Oct-2024 13:02:34.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+28-Oct-2024 13:02:34.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+28-Oct-2024 13:02:34.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+28-Oct-2024 13:02:34.653 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+28-Oct-2024 13:02:34.659 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+28-Oct-2024 13:02:34.887 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:02:34.908 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [408] milliseconds
+28-Oct-2024 13:02:34.961 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+28-Oct-2024 13:02:34.961 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+28-Oct-2024 13:02:34.971 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml]
+28-Oct-2024 13:02:37.800 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-Oct-2024 13:02:38.993 INFO [main] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.6.1.Final
+28-Oct-2024 13:02:39.167 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService HHH000026: Second-level cache disabled
+28-Oct-2024 13:02:40.262 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.apache.commons.dbcp2.BasicDataSource@1d7d2345']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+28-Oct-2024 13:02:41.996 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-Oct-2024 13:02:42.604 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml] has finished in [7,632] ms
+28-Oct-2024 13:02:42.607 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:02:42.622 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7712] milliseconds
+28-Oct-2024 13:05:22.545 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:05:22.549 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+28-Oct-2024 13:05:22.567 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [project-one-Mauro] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+28-Oct-2024 13:05:22.567 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [project-one-Mauro] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1847)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+28-Oct-2024 13:05:22.572 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:05:22.586 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:05:26.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+28-Oct-2024 13:05:26.221 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+28-Oct-2024 13:05:26.221 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\mau.lopezrodriguez\.jdks\corretto-21.0.4
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-LTS
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 13:05:26.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\tomcat\10.1.30
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57983,suspend=y,server=n
+28-Oct-2024 13:05:26.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\dev\tomcat\10.1.30
+28-Oct-2024 13:05:26.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro
+28-Oct-2024 13:05:26.236 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\temp
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\logging.properties
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\mau.lopezrodriguez\AppData\Local\JetBrains\IdeaIC2024.2\captureAgent\debugger-agent.jar
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+28-Oct-2024 13:05:26.237 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+28-Oct-2024 13:05:26.241 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+28-Oct-2024 13:05:26.247 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+28-Oct-2024 13:05:26.449 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:05:26.473 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [392] milliseconds
+28-Oct-2024 13:05:26.524 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+28-Oct-2024 13:05:26.524 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+28-Oct-2024 13:05:26.534 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml]
+28-Oct-2024 13:05:29.337 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-Oct-2024 13:05:30.508 INFO [main] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.6.1.Final
+28-Oct-2024 13:05:30.684 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService HHH000026: Second-level cache disabled
+28-Oct-2024 13:05:31.749 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.apache.commons.dbcp2.BasicDataSource@4471f216']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+28-Oct-2024 13:05:33.486 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-Oct-2024 13:05:34.090 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\mau.lopezrodriguez\OneDrive - Travelport\Documents\code\project-one-Mauro\conf\Catalina\localhost\project-one-Mauro.xml] has finished in [7,555] ms
+28-Oct-2024 13:05:34.093 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9080"]
+28-Oct-2024 13:05:34.112 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7637] milliseconds
