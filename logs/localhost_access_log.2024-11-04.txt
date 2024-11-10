@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [04/Nov/2024:12:00:09 +0100] "GET /project-ex1-David/clients HTTP/1.1" 400 833
+0:0:0:0:0:0:0:1 - - [04/Nov/2024:12:00:32 +0100] "GET /project-ex1-David/clients?DNI=1235231C HTTP/1.1" 200 408
+0:0:0:0:0:0:0:1 - - [04/Nov/2024:12:01:35 +0100] "GET /project-ex1-David/clients?DNI=1235231C HTTP/1.1" 200 408
+0:0:0:0:0:0:0:1 - - [04/Nov/2024:12:02:10 +0100] "GET /project-ex1-David/clients?DNI=1235231C HTTP/1.1" 200 408
